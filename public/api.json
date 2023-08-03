@@ -1,0 +1,876 @@
+{
+    "airsial": {
+        "Response": {
+            "message": "Flight Successfully fetched",
+            "Data": {
+                "outbound": [
+                    {
+                        "FLIGHT_NO": "PF713",
+                        "DEPARTURE_DATE": "25-08-2023",
+                        "DEPARTURE_TIME": "18:00",
+                        "ARRIVAL_TIME": "20:00",
+                        "JOURNEY_CODE": "186083",
+                        "CLASS_CODE": "6001",
+                        "ORGN": "LHE",
+                        "DEST": "JED",
+                        "CURRENCY": "PKR",
+                        "DURATION": "01h 00m",
+                        "BAGGAGE_FARE": [
+                            {
+                                "sub_class_id": "2",
+                                "sub_class_desc": "Standard Baggage",
+                                "abbr": "SB",
+                                "no_of_bags": "1",
+                                "adv_tax": "0",
+                                "amount": 0,
+                                "actual_amount": 0,
+                                "weight": "20",
+                                "piece": "1",
+                                "FARE_PAX_WISE": {
+                                    "ADULT": {
+                                        "BASIC_FARE": 5150,
+                                        "SURCHARGE": "20000",
+                                        "FEES": "730",
+                                        "TAX": 9800,
+                                        "TOTAL": 35680
+                                    },
+                                    "CHILD": {
+                                        "BASIC_FARE": 3865,
+                                        "SURCHARGE": "20000",
+                                        "FEES": "730",
+                                        "TAX": 9800,
+                                        "TOTAL": 34395
+                                    },
+                                    "INFANT": {
+                                        "BASIC_FARE": "0",
+                                        "SURCHARGE": "0",
+                                        "FEES": "730",
+                                        "TAX": "5000",
+                                        "TOTAL": 5730
+                                    }
+                                }
+                            },
+                            {
+                                "sub_class_id": "3",
+                                "sub_class_desc": "Extra Baggage",
+                                "abbr": "EB",
+                                "no_of_bags": "2",
+                                "adv_tax": "0",
+                                "amount": 3500,
+                                "actual_amount": 3500,
+                                "weight": "40",
+                                "piece": "2",
+                                "FARE_PAX_WISE": {
+                                    "ADULT": {
+                                        "BASIC_FARE": 8650,
+                                        "SURCHARGE": "20000",
+                                        "FEES": "730",
+                                        "TAX": 9800,
+                                        "TOTAL": 39180
+                                    },
+                                    "CHILD": {
+                                        "BASIC_FARE": 7365,
+                                        "SURCHARGE": "20000",
+                                        "FEES": "730",
+                                        "TAX": 9800,
+                                        "TOTAL": 37895
+                                    },
+                                    "INFANT": {
+                                        "BASIC_FARE": "0",
+                                        "SURCHARGE": "0",
+                                        "FEES": "730",
+                                        "TAX": "5000",
+                                        "TOTAL": 5730
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "FLIGHT_NO": "PF2776",
+                        "DEPARTURE_DATE": "25-08-2023",
+                        "DEPARTURE_TIME": "19:00",
+                        "ARRIVAL_TIME": "21:00",
+                        "JOURNEY_CODE": "186447",
+                        "CLASS_CODE": "5001",
+                        "ORGN": "LHE",
+                        "DEST": "JED",
+                        "CURRENCY": "PKR",
+                        "DURATION": "01h 00m",
+                        "BAGGAGE_FARE": [
+                            {
+                                "sub_class_id": "2",
+                                "sub_class_desc": "Standard Baggage",
+                                "abbr": "SB",
+                                "no_of_bags": "1",
+                                "adv_tax": "0",
+                                "amount": 0,
+                                "actual_amount": 0,
+                                "weight": "20",
+                                "piece": "1",
+                                "FARE_PAX_WISE": {
+                                    "ADULT": {
+                                        "BASIC_FARE": 20000,
+                                        "SURCHARGE": "505",
+                                        "FEES": "0",
+                                        "TAX": 9800,
+                                        "TOTAL": 30305
+                                    },
+                                    "CHILD": {
+                                        "BASIC_FARE": 12500,
+                                        "SURCHARGE": "505",
+                                        "FEES": "0",
+                                        "TAX": 9800,
+                                        "TOTAL": 22805
+                                    },
+                                    "INFANT": {
+                                        "BASIC_FARE": "6000",
+                                        "SURCHARGE": "505",
+                                        "FEES": "0",
+                                        "TAX": "9800",
+                                        "TOTAL": 16305
+                                    }
+                                }
+                            },
+                            {
+                                "sub_class_id": "3",
+                                "sub_class_desc": "Extra Baggage",
+                                "abbr": "EB",
+                                "no_of_bags": "2",
+                                "adv_tax": "0",
+                                "amount": 3500,
+                                "actual_amount": 3500,
+                                "weight": "40",
+                                "piece": "2",
+                                "FARE_PAX_WISE": {
+                                    "ADULT": {
+                                        "BASIC_FARE": 23500,
+                                        "SURCHARGE": "505",
+                                        "FEES": "0",
+                                        "TAX": 9800,
+                                        "TOTAL": 33805
+                                    },
+                                    "CHILD": {
+                                        "BASIC_FARE": 16000,
+                                        "SURCHARGE": "505",
+                                        "FEES": "0",
+                                        "TAX": 9800,
+                                        "TOTAL": 26305
+                                    },
+                                    "INFANT": {
+                                        "BASIC_FARE": "6000",
+                                        "SURCHARGE": "505",
+                                        "FEES": "0",
+                                        "TAX": "9800",
+                                        "TOTAL": 16305
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                ],
+                "availableFareTypes": [
+                    {
+                        "SUB_CLASS_ID": "1",
+                        "SUB_CLASS_DESC": "Nil Baggage",
+                        "ABBR": "NB",
+                        "NO_OF_BAGS": "0",
+                        "ADV_TAX": "0",
+                        "AMOUNT": "-2500",
+                        "ACTUAL_AMOUNT": "-2500",
+                        "WEIGHT": "0",
+                        "PIECE": "0",
+                        "DESCRIPTION": "Nil Baggage"
+                    },
+                    {
+                        "SUB_CLASS_ID": "2",
+                        "SUB_CLASS_DESC": "Standard Baggage",
+                        "ABBR": "SB",
+                        "NO_OF_BAGS": "1",
+                        "ADV_TAX": "0",
+                        "AMOUNT": "0",
+                        "ACTUAL_AMOUNT": "0",
+                        "WEIGHT": "20",
+                        "PIECE": "1",
+                        "DESCRIPTION": "1 Piece(s) ( Total 20 KG )"
+                    },
+                    {
+                        "SUB_CLASS_ID": "3",
+                        "SUB_CLASS_DESC": "Extra Baggage",
+                        "ABBR": "EB",
+                        "NO_OF_BAGS": "2",
+                        "ADV_TAX": "0",
+                        "AMOUNT": "3500",
+                        "ACTUAL_AMOUNT": "3500",
+                        "WEIGHT": "40",
+                        "PIECE": "2",
+                        "DESCRIPTION": "2 Piece(s) ( Total 40 KG )"
+                    }
+                ]
+            }
+        },
+        "Success": true,
+        "ErrorCode": 0
+    },
+    "aljazeera": {
+        "data": {
+            "availabilityv4": {
+                "results": [
+                    {
+                        "trips": [
+                            {
+                                "date": "2023-08-23T00:00:00",
+                                "journeysAvailableByMarket": [
+                                    {
+                                        "key": "DXB|KWI",
+                                        "value": [
+                                            {
+                                                "flightType": "NonStop",
+                                                "stops": 0,
+                                                "designator": {
+                                                    "origin": "DXB",
+                                                    "destination": "KWI",
+                                                    "arrival": "2023-08-23T11:35:00",
+                                                    "departure": "2023-08-23T10:50:00"
+                                                },
+                                                "journeyKey": "Sjl_IDEyOH4gfn5EWEJ_MDgvMjMvMjAyMyAxMDo1MH5LV0l_MDgvMjMvMjAyMyAxMTozNX5_",
+                                                "fares": [
+                                                    {
+                                                        "fareAvailabilityKey": "MH5FfiB_Sjl_RUxTUE9XQUV_TEUwMH5_MH4zfn5YITA-",
+                                                        "details": [
+                                                            {
+                                                                "availableCount": 9,
+                                                                "status": "Active",
+                                                                "reference": "MH5FfiB_Sjl_RUxTUE9XQUV_TEUwMH5_MH4zfn5Y"
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "fareAvailabilityKey": "MH5CfiB_Sjl_QkxTUE9XQUV_VkUyMH5_MH4zfn5YITE-",
+                                                        "details": [
+                                                            {
+                                                                "availableCount": 9,
+                                                                "status": "Active",
+                                                                "reference": "MH5CfiB_Sjl_QkxTUE9XQUV_VkUyMH5_MH4zfn5Y"
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "fareAvailabilityKey": "MH5LfiB_Sjl_S0xTUE9XQUV_WEUzMH5_MH40fn5YITI-",
+                                                        "details": [
+                                                            {
+                                                                "availableCount": 9,
+                                                                "status": "Active",
+                                                                "reference": "MH5LfiB_Sjl_S0xTUE9XQUV_WEUzMH5_MH40fn5Y"
+                                                            }
+                                                        ]
+                                                    }
+                                                ],
+                                                "segments": [
+                                                    {
+                                                        "segmentKey": "Sjl_IDEyOH4gfn5EWEJ_MDgvMjMvMjAyMyAxMDo1MH5LV0l_MDgvMjMvMjAyMyAxMTozNX5_",
+                                                        "isChangeOfGauge": false,
+                                                        "designator": {
+                                                            "origin": "DXB",
+                                                            "destination": "KWI",
+                                                            "arrival": "2023-08-23T11:35:00",
+                                                            "departure": "2023-08-23T10:50:00"
+                                                        },
+                                                        "identifier": {
+                                                            "identifier": "128",
+                                                            "carrierCode": "J9",
+                                                            "opSuffix": null
+                                                        },
+                                                        "legs": [
+                                                            {
+                                                                "designator": {
+                                                                    "origin": "DXB",
+                                                                    "destination": "KWI",
+                                                                    "departure": "2023-08-23T10:50:00",
+                                                                    "arrival": "2023-08-23T11:35:00"
+                                                                },
+                                                                "legInfo": {
+                                                                    "departureTimeUtc": "2023-08-23T06:50:00Z",
+                                                                    "arrivalTimeUtc": "2023-08-23T08:35:00Z",
+                                                                    "departureTerminal": "1",
+                                                                    "arrivalTerminal": "5",
+                                                                    "departureTimeVariant": 240,
+                                                                    "arrivalTimeVariant": 180,
+                                                                    "equipmentType": "319",
+                                                                    "equipmentTypeSuffix": "NHD",
+                                                                    "departureTime": "2023-08-23T10:50:00",
+                                                                    "arrivalTime": "2023-08-23T11:35:00"
+                                                                },
+                                                                "ssrs": []
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "flightType": "NonStop",
+                                                "stops": 0,
+                                                "designator": {
+                                                    "origin": "DXB",
+                                                    "destination": "KWI",
+                                                    "arrival": "2023-08-23T11:35:00",
+                                                    "departure": "2023-08-23T10:50:00"
+                                                },
+                                                "journeyKey": "Sjl_IDEyMn4gfn5EWEJ_MDgvMjMvMjAyMyAxMDo1MH5LV0l_MDgvMjMvMjAyMyAxMTozNX5_",
+                                                "fares": [
+                                                    {
+                                                        "fareAvailabilityKey": "MH5ZfiB_Sjl_WUxTUE9XQUV_WEUzMH5_MH40fn5YITM-",
+                                                        "details": [
+                                                            {
+                                                                "availableCount": 9,
+                                                                "status": "Active",
+                                                                "reference": "MH5ZfiB_Sjl_WUxTUE9XQUV_WEUzMH5_MH40fn5Y"
+                                                            }
+                                                        ]
+                                                    }
+                                                ],
+                                                "segments": [
+                                                    {
+                                                        "segmentKey": "Sjl_IDEyMn4gfn5EWEJ_MDgvMjMvMjAyMyAxMDo1MH5LV0l_MDgvMjMvMjAyMyAxMTozNX5_",
+                                                        "isChangeOfGauge": false,
+                                                        "designator": {
+                                                            "origin": "DXB",
+                                                            "destination": "KWI",
+                                                            "arrival": "2023-08-23T11:35:00",
+                                                            "departure": "2023-08-23T10:50:00"
+                                                        },
+                                                        "identifier": {
+                                                            "identifier": "122",
+                                                            "carrierCode": "J9",
+                                                            "opSuffix": null
+                                                        },
+                                                        "legs": [
+                                                            {
+                                                                "designator": {
+                                                                    "origin": "DXB",
+                                                                    "destination": "KWI",
+                                                                    "departure": "2023-08-23T10:50:00",
+                                                                    "arrival": "2023-08-23T11:35:00"
+                                                                },
+                                                                "legInfo": {
+                                                                    "departureTimeUtc": "2023-08-23T06:50:00Z",
+                                                                    "arrivalTimeUtc": "2023-08-23T08:35:00Z",
+                                                                    "departureTerminal": "1",
+                                                                    "arrivalTerminal": "5",
+                                                                    "departureTimeVariant": 240,
+                                                                    "arrivalTimeVariant": 180,
+                                                                    "equipmentType": "320",
+                                                                    "equipmentTypeSuffix": "NHD",
+                                                                    "departureTime": "2023-08-23T10:50:00",
+                                                                    "arrivalTime": "2023-08-23T11:35:00"
+                                                                },
+                                                                "ssrs": []
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "flightType": "NonStop",
+                                                "stops": 0,
+                                                "designator": {
+                                                    "origin": "DXB",
+                                                    "destination": "KWI",
+                                                    "arrival": "2023-08-23T17:30:00",
+                                                    "departure": "2023-08-23T16:45:00"
+                                                },
+                                                "journeyKey": "Sjl_IDEyNH4gfn5EWEJ_MDgvMjMvMjAyMyAxNjo0NX5LV0l_MDgvMjMvMjAyMyAxNzozMH5_",
+                                                "fares": [
+                                                    {
+                                                        "fareAvailabilityKey": "MH5ZfiB_Sjl_WUxTUE9XQUV_WEUzMH5_MH40fn5YITM-",
+                                                        "details": [
+                                                            {
+                                                                "availableCount": 9,
+                                                                "status": "Active",
+                                                                "reference": "MH5ZfiB_Sjl_WUxTUE9XQUV_WEUzMH5_MH40fn5Y"
+                                                            }
+                                                        ]
+                                                    }
+                                                ],
+                                                "segments": [
+                                                    {
+                                                        "segmentKey": "Sjl_IDEyNH4gfn5EWEJ_MDgvMjMvMjAyMyAxNjo0NX5LV0l_MDgvMjMvMjAyMyAxNzozMH5_",
+                                                        "isChangeOfGauge": false,
+                                                        "designator": {
+                                                            "origin": "DXB",
+                                                            "destination": "KWI",
+                                                            "arrival": "2023-08-23T17:30:00",
+                                                            "departure": "2023-08-23T16:45:00"
+                                                        },
+                                                        "identifier": {
+                                                            "identifier": "124",
+                                                            "carrierCode": "J9",
+                                                            "opSuffix": null
+                                                        },
+                                                        "legs": [
+                                                            {
+                                                                "designator": {
+                                                                    "origin": "DXB",
+                                                                    "destination": "KWI",
+                                                                    "departure": "2023-08-23T16:45:00",
+                                                                    "arrival": "2023-08-23T17:30:00"
+                                                                },
+                                                                "legInfo": {
+                                                                    "departureTimeUtc": "2023-08-23T12:45:00Z",
+                                                                    "arrivalTimeUtc": "2023-08-23T14:30:00Z",
+                                                                    "departureTerminal": "1",
+                                                                    "arrivalTerminal": "5",
+                                                                    "departureTimeVariant": 240,
+                                                                    "arrivalTimeVariant": 180,
+                                                                    "equipmentType": "320",
+                                                                    "equipmentTypeSuffix": "NHD",
+                                                                    "departureTime": "2023-08-23T16:45:00",
+                                                                    "arrivalTime": "2023-08-23T17:30:00"
+                                                                },
+                                                                "ssrs": []
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "flightType": "NonStop",
+                                                "stops": 0,
+                                                "designator": {
+                                                    "origin": "DXB",
+                                                    "destination": "KWI",
+                                                    "arrival": "2023-08-23T20:10:00",
+                                                    "departure": "2023-08-23T19:25:00"
+                                                },
+                                                "journeyKey": "Sjl_IDEyNn4gfn5EWEJ_MDgvMjMvMjAyMyAxOToyNX5LV0l_MDgvMjMvMjAyMyAyMDoxMH5_",
+                                                "fares": [
+                                                    {
+                                                        "fareAvailabilityKey": "MH5ZfiB_Sjl_WUxTUE9XQUV_WEUzMH5_MH40fn5YITM-",
+                                                        "details": [
+                                                            {
+                                                                "availableCount": 9,
+                                                                "status": "Active",
+                                                                "reference": "MH5ZfiB_Sjl_WUxTUE9XQUV_WEUzMH5_MH40fn5Y"
+                                                            }
+                                                        ]
+                                                    }
+                                                ],
+                                                "segments": [
+                                                    {
+                                                        "segmentKey": "Sjl_IDEyNn4gfn5EWEJ_MDgvMjMvMjAyMyAxOToyNX5LV0l_MDgvMjMvMjAyMyAyMDoxMH5_",
+                                                        "isChangeOfGauge": false,
+                                                        "designator": {
+                                                            "origin": "DXB",
+                                                            "destination": "KWI",
+                                                            "arrival": "2023-08-23T20:10:00",
+                                                            "departure": "2023-08-23T19:25:00"
+                                                        },
+                                                        "identifier": {
+                                                            "identifier": "126",
+                                                            "carrierCode": "J9",
+                                                            "opSuffix": null
+                                                        },
+                                                        "legs": [
+                                                            {
+                                                                "designator": {
+                                                                    "origin": "DXB",
+                                                                    "destination": "KWI",
+                                                                    "departure": "2023-08-23T19:25:00",
+                                                                    "arrival": "2023-08-23T20:10:00"
+                                                                },
+                                                                "legInfo": {
+                                                                    "departureTimeUtc": "2023-08-23T15:25:00Z",
+                                                                    "arrivalTimeUtc": "2023-08-23T17:10:00Z",
+                                                                    "departureTerminal": "1",
+                                                                    "arrivalTerminal": "5",
+                                                                    "departureTimeVariant": 240,
+                                                                    "arrivalTimeVariant": 180,
+                                                                    "equipmentType": "320",
+                                                                    "equipmentTypeSuffix": "NHD",
+                                                                    "departureTime": "2023-08-23T19:25:00",
+                                                                    "arrivalTime": "2023-08-23T20:10:00"
+                                                                },
+                                                                "ssrs": []
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "faresAvailable": [
+                    {
+                        "key": "MH5FfiB_Sjl_RUxTUE9XQUV_TEUwMH5_MH4zfn5YITA-",
+                        "value": {
+                            "totals": {
+                                "fareTotal": 311.0,
+                                "revenueTotal": 161.7,
+                                "publishedTotal": 161.7,
+                                "loyaltyTotal": 0.0,
+                                "discountedTotal": 161.7
+                            },
+                            "fareAvailabilityKey": "MH5FfiB_Sjl_RUxTUE9XQUV_TEUwMH5_MH4zfn5YITA-",
+                            "fares": [
+                                {
+                                    "fareBasisCode": "ELSPOWAE",
+                                    "productClass": "EL",
+                                    "passengerFares": [
+                                        {
+                                            "passengerType": "ADT",
+                                            "passengerDiscountCode": null,
+                                            "fareAmount": 311.0,
+                                            "fareDiscountCode": null,
+                                            "revenueFare": 161.7,
+                                            "publishedFare": 161.7,
+                                            "serviceCharges": [
+                                                {
+                                                    "amount": 161.7,
+                                                    "code": null,
+                                                    "detail": null,
+                                                    "type": "FarePrice",
+                                                    "currencyCode": "AED"
+                                                },
+                                                {
+                                                    "amount": 149.3,
+                                                    "code": null,
+                                                    "detail": "TaxFeeSum",
+                                                    "type": "Tax",
+                                                    "currencyCode": "AED"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "travelClassCode": null
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "key": "MH5CfiB_Sjl_QkxTUE9XQUV_VkUyMH5_MH4zfn5YITE-",
+                        "value": {
+                            "totals": {
+                                "fareTotal": 347.0,
+                                "revenueTotal": 197.7,
+                                "publishedTotal": 197.7,
+                                "loyaltyTotal": 0.0,
+                                "discountedTotal": 197.7
+                            },
+                            "fareAvailabilityKey": "MH5CfiB_Sjl_QkxTUE9XQUV_VkUyMH5_MH4zfn5YITE-",
+                            "fares": [
+                                {
+                                    "fareBasisCode": "BLSPOWAE",
+                                    "productClass": "EV",
+                                    "passengerFares": [
+                                        {
+                                            "passengerType": "ADT",
+                                            "passengerDiscountCode": null,
+                                            "fareAmount": 347.0,
+                                            "fareDiscountCode": null,
+                                            "revenueFare": 197.7,
+                                            "publishedFare": 197.7,
+                                            "serviceCharges": [
+                                                {
+                                                    "amount": 197.7,
+                                                    "code": null,
+                                                    "detail": null,
+                                                    "type": "FarePrice",
+                                                    "currencyCode": "AED"
+                                                },
+                                                {
+                                                    "amount": 149.3,
+                                                    "code": null,
+                                                    "detail": "TaxFeeSum",
+                                                    "type": "Tax",
+                                                    "currencyCode": "AED"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "travelClassCode": null
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "key": "MH5LfiB_Sjl_S0xTUE9XQUV_WEUzMH5_MH40fn5YITI-",
+                        "value": {
+                            "totals": {
+                                "fareTotal": 371.0,
+                                "revenueTotal": 221.7,
+                                "publishedTotal": 221.7,
+                                "loyaltyTotal": 0.0,
+                                "discountedTotal": 221.7
+                            },
+                            "fareAvailabilityKey": "MH5LfiB_Sjl_S0xTUE9XQUV_WEUzMH5_MH40fn5YITI-",
+                            "fares": [
+                                {
+                                    "fareBasisCode": "KLSPOWAE",
+                                    "productClass": "EE",
+                                    "passengerFares": [
+                                        {
+                                            "passengerType": "ADT",
+                                            "passengerDiscountCode": null,
+                                            "fareAmount": 371.0,
+                                            "fareDiscountCode": null,
+                                            "revenueFare": 221.7,
+                                            "publishedFare": 221.7,
+                                            "serviceCharges": [
+                                                {
+                                                    "amount": 221.7,
+                                                    "code": null,
+                                                    "detail": null,
+                                                    "type": "FarePrice",
+                                                    "currencyCode": "AED"
+                                                },
+                                                {
+                                                    "amount": 149.3,
+                                                    "code": null,
+                                                    "detail": "TaxFeeSum",
+                                                    "type": "Tax",
+                                                    "currencyCode": "AED"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "travelClassCode": null
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "key": "MH5ZfiB_Sjl_WUxTUE9XQUV_WEUzMH5_MH40fn5YITM-",
+                        "value": {
+                            "totals": {
+                                "fareTotal": 917.0,
+                                "revenueTotal": 767.7,
+                                "publishedTotal": 767.7,
+                                "loyaltyTotal": 0.0,
+                                "discountedTotal": 767.7
+                            },
+                            "fareAvailabilityKey": "MH5ZfiB_Sjl_WUxTUE9XQUV_WEUzMH5_MH40fn5YITM-",
+                            "fares": [
+                                {
+                                    "fareBasisCode": "YLSPOWAE",
+                                    "productClass": "EE",
+                                    "passengerFares": [
+                                        {
+                                            "passengerType": "ADT",
+                                            "passengerDiscountCode": null,
+                                            "fareAmount": 917.0,
+                                            "fareDiscountCode": null,
+                                            "revenueFare": 767.7,
+                                            "publishedFare": 767.7,
+                                            "serviceCharges": [
+                                                {
+                                                    "amount": 767.7,
+                                                    "code": null,
+                                                    "detail": null,
+                                                    "type": "FarePrice",
+                                                    "currencyCode": "AED"
+                                                },
+                                                {
+                                                    "amount": 149.3,
+                                                    "code": null,
+                                                    "detail": "TaxFeeSum",
+                                                    "type": "Tax",
+                                                    "currencyCode": "AED"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "travelClassCode": null
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "currencyCode": "AED",
+                "includeTaxesAndFees": true
+            }
+        },
+        "metadata": {
+            "documentation_url": "http://developer.navitaire.com/documentation/dotrezapi/graphcontrollerv2"
+        }
+    },
+    "connect": {
+        "data": {
+            "availabilityv4": {
+                "results": [
+                    {
+                        "trips": [
+                            {
+                                "date": "2023-08-19T00:00:00",
+                                "journeysAvailableByMarket": [
+                                    {
+                                        "key": "LHE|CAI",
+                                        "value": [
+                                            {
+                                                "flightType": "Connect",
+                                                "stops": 1,
+                                                "designator": {
+                                                    "origin": "LHE",
+                                                    "destination": "CAI",
+                                                    "arrival": "2023-08-19T11:50:00",
+                                                    "departure": "2023-08-19T01:35:00"
+                                                },
+                                                "journeyKey": "Sjl_IDUwMn4gfn5MSEV_MDgvMTkvMjAyMyAwMTozNX5LV0l_MDgvMTkvMjAyMyAwMzozNX5_Xko5fiA3MzF_IH5_S1dJfjA4LzE5LzIwMjMgMDk6MDB_Q0FJfjA4LzE5LzIwMjMgMTE6NTB_fg--",
+                                                "fares": [
+                                                    {
+                                                        "fareAvailabilityKey": "MH5ZfiB_Sjl_WUxTUE9XUEt_WEUzMH5_MH4xMX5_WCEw",
+                                                        "details": [
+                                                            {
+                                                                "availableCount": 9,
+                                                                "status": "Active",
+                                                                "reference": "MH5ZfiB_Sjl_WUxTUE9XUEt_WEUzMH5_MH4xMX5_WA--"
+                                                            }
+                                                        ]
+                                                    }
+                                                ],
+                                                "segments": [
+                                                    {
+                                                        "segmentKey": "Sjl_IDUwMn4gfn5MSEV_MDgvMTkvMjAyMyAwMTozNX5LV0l_MDgvMTkvMjAyMyAwMzozNX5_",
+                                                        "isChangeOfGauge": false,
+                                                        "designator": {
+                                                            "origin": "LHE",
+                                                            "destination": "KWI",
+                                                            "arrival": "2023-08-19T03:35:00",
+                                                            "departure": "2023-08-19T01:35:00"
+                                                        },
+                                                        "identifier": {
+                                                            "identifier": "502",
+                                                            "carrierCode": "J9",
+                                                            "opSuffix": null
+                                                        },
+                                                        "legs": [
+                                                            {
+                                                                "designator": {
+                                                                    "origin": "LHE",
+                                                                    "destination": "KWI",
+                                                                    "departure": "2023-08-19T01:35:00",
+                                                                    "arrival": "2023-08-19T03:35:00"
+                                                                },
+                                                                "legInfo": {
+                                                                    "departureTimeUtc": "2023-08-18T20:35:00Z",
+                                                                    "arrivalTimeUtc": "2023-08-19T00:35:00Z",
+                                                                    "departureTerminal": null,
+                                                                    "arrivalTerminal": "5",
+                                                                    "departureTimeVariant": 300,
+                                                                    "arrivalTimeVariant": 180,
+                                                                    "equipmentType": "320",
+                                                                    "equipmentTypeSuffix": "NHD",
+                                                                    "departureTime": "2023-08-19T01:35:00",
+                                                                    "arrivalTime": "2023-08-19T03:35:00"
+                                                                },
+                                                                "ssrs": []
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "segmentKey": "Sjl_IDczMX4gfn5LV0l_MDgvMTkvMjAyMyAwOTowMH5DQUl_MDgvMTkvMjAyMyAxMTo1MH5_",
+                                                        "isChangeOfGauge": false,
+                                                        "designator": {
+                                                            "origin": "KWI",
+                                                            "destination": "CAI",
+                                                            "arrival": "2023-08-19T11:50:00",
+                                                            "departure": "2023-08-19T09:00:00"
+                                                        },
+                                                        "identifier": {
+                                                            "identifier": "731",
+                                                            "carrierCode": "J9",
+                                                            "opSuffix": null
+                                                        },
+                                                        "legs": [
+                                                            {
+                                                                "designator": {
+                                                                    "origin": "KWI",
+                                                                    "destination": "CAI",
+                                                                    "departure": "2023-08-19T09:00:00",
+                                                                    "arrival": "2023-08-19T11:50:00"
+                                                                },
+                                                                "legInfo": {
+                                                                    "departureTimeUtc": "2023-08-19T06:00:00Z",
+                                                                    "arrivalTimeUtc": "2023-08-19T09:50:00Z",
+                                                                    "departureTerminal": "5",
+                                                                    "arrivalTerminal": "2",
+                                                                    "departureTimeVariant": 180,
+                                                                    "arrivalTimeVariant": 120,
+                                                                    "equipmentType": "320",
+                                                                    "equipmentTypeSuffix": "N",
+                                                                    "departureTime": "2023-08-19T09:00:00",
+                                                                    "arrivalTime": "2023-08-19T11:50:00"
+                                                                },
+                                                                "ssrs": []
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "faresAvailable": [
+                    {
+                        "key": "MH5ZfiB_Sjl_WUxTUE9XUEt_WEUzMH5_MH4xMX5_WCEw",
+                        "value": {
+                            "totals": {
+                                "fareTotal": 577.8,
+                                "revenueTotal": 533.7,
+                                "publishedTotal": 533.7,
+                                "loyaltyTotal": 0.0,
+                                "discountedTotal": 533.7
+                            },
+                            "fareAvailabilityKey": "MH5ZfiB_Sjl_WUxTUE9XUEt_WEUzMH5_MH4xMX5_WCEw",
+                            "fares": [
+                                {
+                                    "fareBasisCode": "YLSPOWPK",
+                                    "productClass": "EE",
+                                    "passengerFares": [
+                                        {
+                                            "passengerType": "ADT",
+                                            "passengerDiscountCode": null,
+                                            "fareAmount": 577.8,
+                                            "fareDiscountCode": null,
+                                            "revenueFare": 533.7,
+                                            "publishedFare": 533.7,
+                                            "serviceCharges": [
+                                                {
+                                                    "amount": 533.7,
+                                                    "code": null,
+                                                    "detail": null,
+                                                    "type": "FarePrice",
+                                                    "currencyCode": "USD"
+                                                },
+                                                {
+                                                    "amount": 44.1,
+                                                    "code": null,
+                                                    "detail": "TaxFeeSum",
+                                                    "type": "Tax",
+                                                    "currencyCode": "USD"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "travelClassCode": null
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "currencyCode": "USD",
+                "includeTaxesAndFees": true
+            }
+        },
+        "metadata": {
+            "documentation_url": "http://developer.navitaire.com/documentation/dotrezapi/graphcontrollerv2"
+        }
+    }
+}
