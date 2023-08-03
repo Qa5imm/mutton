@@ -44,39 +44,3 @@ class Flight
     }
 }
 
-// class PassengerClass
-// {
-//     public function __construct(protected $type, protected $numSeats, protected $fair, protected $currency)
-//     {
-//     }
-// }
-
-
-// class Baggage
-// {
-//     public function __construct(protected $type, protected $numBags, protected $amount, protected $weight)
-//     {
-//     }
-// }
-
-// class Segments
-// {
-//     public function __construct(protected $origin, protected $dest, protected $arrival, protected $departure)
-//     {
-//     }
-// }
-
-
-// class Airline
-// {
-//     protected $flights = [];
-//     protected $airline = [];
-//     public function setFlight($flight)
-//     {
-//         $this->flights[] = $flight;
-//     }
-//     public function setAirline($airline)
-//     {
-//         $this->airline = $airline;
-//     }
-// }
