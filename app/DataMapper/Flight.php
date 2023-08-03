@@ -37,10 +37,5 @@ class Flight
     {
         $this->segments[] = $segments;
     }
-
-    public static function fromState(array $state)
-    {
-        return "object";
-    }
 }
 
