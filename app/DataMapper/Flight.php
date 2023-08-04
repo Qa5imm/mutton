@@ -17,12 +17,12 @@ class Flight
 
     public function __construct(
         protected $aircraft,
+        protected $flight_type,
         protected $flight_key,
         protected $departure_date,
         protected $departure_time,
         protected $arrival_time,
         protected $duration,
-        protected $flight_type
     ) {
     }
     public function setPassengerClass(PassengerClass  $passengerClass)
@@ -40,9 +40,9 @@ class Flight
     }
     public function setAirport($type, Airport $airport) // to set origin and destination
     {
-        if ($type === "DEST") {
+        if ($type === "DEST" || $type === "destination") {
             $this->destination = $airport;
-        } else if ($type === "ORGN") {
+        } else if ($type === "ORGN" || $type === "origin") {
             $this->origin = $airport;
         }
     }

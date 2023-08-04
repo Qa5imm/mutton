@@ -45,11 +45,11 @@ class AirSialController extends Controller
         foreach ($allFlights as $flightData) {
             $Flight = new Flight(
                 null,
+                null,
                 $flightData['FLIGHT_NO'],
                 $flightData['DEPARTURE_DATE'],
                 $flightData['DEPARTURE_TIME'],
                 $flightData['ARRIVAL_TIME'],
-                $flightData['JOURNEY_CODE'],
                 $flightData['DURATION']
             );
 
