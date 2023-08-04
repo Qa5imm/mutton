@@ -2,6 +2,7 @@
 
 namespace App\DataMapper;
 
+use App\DataMapper\Airport;
 use App\DataMapper\Baggage;
 use App\DataMapper\Segment;
 use App\DataMapper\PassengerClass;
@@ -11,6 +12,8 @@ class Flight
     protected $passengerClass = [];
     protected $baggage = [];
     protected $segments = [];
+    protected Airport $origin;
+    protected Airport $destination;
 
     public function __construct(
         protected $aircraft,
@@ -18,8 +21,6 @@ class Flight
         protected $departure_date,
         protected $departure_time,
         protected $arrival_time,
-        protected $origin,
-        protected $destination,
         protected $duration,
         protected $flight_type
     ) {
@@ -37,5 +38,12 @@ class Flight
     {
         $this->segments[] = $segments;
     }
+    public function setAirport($type, Airport $airport) // to set origin and destination
+    {
+        if ($type === "DEST") {
+            $this->destination = $airport;
+        } else if ($type === "ORGN") {
+            $this->origin = $airport;
+        }
+    }
 }
-
