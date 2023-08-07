@@ -3,30 +3,30 @@
 namespace App\DataMapper;
 
 use App\DataMapper\Airport;
-use App\DataMapper\Fare;
 use App\DataMapper\Segment;
-use App\DataMapper\PassengerClass;
+use App\DataMapper\TravelClass;
 
 class Flight
 {
-    protected $passengerClass = [];
+    protected $TravelClass = [];
     protected $segments = [];
-    protected Airport $origin;
-    protected Airport $destination;
+  
 
     public function __construct(
         protected $aircraft,
         protected $flight_type,
         protected $flight_key,
+        protected Airport $origin,
+        protected Airport $destination,
         protected $departure_date,
         protected $departure_time,
         protected $arrival_time,
         protected $duration,
     ) {
     }
-    public function setPassengerClass(PassengerClass  $passengerClass)
+    public function setTravelClass(TravelClass  $travelClass)
     {
-        $this->passengerClass[] = $passengerClass;
+        $this->TravelClass[] = $travelClass;
     }
     public function setSegments(Segment $segments)
     {

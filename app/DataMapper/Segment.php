@@ -1,12 +1,12 @@
 <?php
 
 namespace App\DataMapper;
-
+use App\DataMapper\Airport;
 class Segment
 {
     public function __construct(
-        protected $origin,
-        protected $dest,
+        protected Airport $origin,
+        protected Airport $dest,
         protected $arrival,
         protected $departure
     ) {

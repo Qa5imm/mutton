@@ -7,10 +7,9 @@ use App\DataMapper\Airline;
 use App\DataMapper\Airport;
 use App\DataMapper\Fare;
 use App\DataMapper\Flight;
-use App\DataMapper\PassengerClass;
+use App\DataMapper\Segment;
+use App\DataMapper\TravelClass;
 use App\Http\Controllers\Controller;
-
-
 
 
 enum passType
@@ -19,12 +18,6 @@ enum passType
     case CHILD;
     case INFANT;
 }
-enum airportType
-{
-    case ORGN;
-    case DEST;
-}
-
 
 
 class AirSialController extends Controller
@@ -32,6 +25,17 @@ class AirSialController extends Controller
 
     public function getAirlineData()
     {
+        $travellers = array(
+            'ADULT' => array(
+                'count' => 2
+            ),
+            'CHILD' => array(
+                'count' => 1
+            ),
+            'INFANT' => array(
+                'count' => 0
+            ),
+        );
         $response = file_get_contents("./api.json");
         $data = json_decode($response, true);
         $airSialData = $data["airsial"];
@@ -47,68 +51,51 @@ class AirSialController extends Controller
                 null,
                 null,
                 $flightData['FLIGHT_NO'],
+                new Airport(null, null, $flightData["ORGN"]),
+                new Airport(null, null, $flightData["DEST"]),
                 $flightData['DEPARTURE_DATE'],
-                $flightData['DEPARTURE_TIME'],
-                $flightData['ARRIVAL_TIME'],
+                $flightData['DEPARTURE_DATE'] . "T" . $flightData['DEPARTURE_TIME'],
+                $flightData['DEPARTURE_DATE'] . "T" . $flightData['ARRIVAL_TIME'],
                 $flightData['DURATION']
             );
-
-
-            // Airports (origin and destination)
-            foreach (airportType::cases() as $type) {
-                $airport = new Airport(null, null, $flightData[$type->name]);
-                $Flight->setAirport($type->name, $airport);
-            }
-
-
 
             // Passenger Class 
             $baggeFares = $flightData["BAGGAGE_FARE"];
             foreach ($baggeFares as $baggeFare) {
-                $PassengerClass = new PassengerClass(
+                $TravelClass = new TravelClass(
                     $baggeFare["sub_class_desc"],
                     $baggeFare["weight"],
                     $baggeFare["no_of_bags"],
-                    $flightData['CURRENCY'],
+                    $flightData['CURRENCY']
                 );
                 $farePaxWise = $baggeFare["FARE_PAX_WISE"];
+                $totalFare = 0;
                 foreach (passType::cases() as $type) {
                     $passType = $type->name;
-                    $Fare = new Fare(
-                        $passType,
-                        $farePaxWise[$passType]["TOTAL"]
-                    );
-                    $PassengerClass->setFares($Fare);
+                    if ($travellers[$passType]['count'] !== 0) {
+                        $totalAmount = $farePaxWise[$passType]["TOTAL"] * $travellers[$passType]['count']; // mutliplying base fare of a class with number of travellers in that class
+                        $totalFare += $totalAmount;
+                        $Fare = new Fare(
+                            $passType,
+                            $totalAmount
+                        );
+                        $TravelClass->setFares($Fare);
+                    }
                 }
-                $Flight->setPassengerClass($PassengerClass);
+                $TravelClass->setTotalFare($totalFare);
+                $Flight->setTravelClass($TravelClass);
             }
 
 
-
-
-
-            // foreach (classType::cases() as $type) {
-            //     $classType = $type->name;
-            //     $passengerClassData = $flightData["BAGGAGE_FARE"][0]["FARE_PAX_WISE"];
-            //     $PassengerClass = new PassengerClass(
-            //         $classType,
-            //         null,
-            //         $passengerClassData[$classType]["TOTAL"],
-            //         $flightData['CURRENCY'],
-            //     );
-            //     $allfares = $flightData["BAGGAGE_FARE"];
-            //     foreach ($allfares as $fareData) {
-            //         $Fare = new Fare(
-            //             $fareData["sub_class_desc"],
-            //             $fareData["no_of_bags"],
-            //             $fareData["amount"],
-            //             $fareData["weight"]
-            //         );
-            //         $PassengerClass->setFairs($Fare);
-            //     }
-            //     $Flight->setPassengerClass($PassengerClass);
-            // }
-
+            if (!isset($flightData["segments"])) {
+                $Segment = new Segment(
+                    new Airport(null, null, $flightData["ORGN"]),
+                    new Airport(null, null, $flightData["DEST"]),
+                    $flightData['DEPARTURE_DATE'] . "T" . $flightData['DEPARTURE_TIME'],
+                    $flightData['DEPARTURE_DATE'] . "T" . $flightData['ARRIVAL_TIME'],
+                );
+                $Flight->setSegments($Segment);
+            }
 
             // Airline
             $Airline->setFlight($Flight);

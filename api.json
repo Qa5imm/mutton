@@ -872,5 +872,222 @@
         "metadata": {
             "documentation_url": "http://developer.navitaire.com/documentation/dotrezapi/graphcontrollerv2"
         }
+    },
+    "airsial-travellers": {
+        "Response": {
+            "message": "Flight Successfully fetched",
+            "Data": {
+                "outbound": [
+                    {
+                        "FLIGHT_NO": "PF713",
+                        "DEPARTURE_DATE": "25-08-2023",
+                        "DEPARTURE_TIME": "18:00",
+                        "ARRIVAL_TIME": "20:00",
+                        "DEPARTURE_UTC": "25-08-2023 13:00",
+                        "ARRIVAL_UTC": "25-08-2023 17:00",
+                        "JOURNEY_CODE": "186083",
+                        "CLASS_CODE": "6001",
+                        "ORGN": "LHE",
+                        "DEST": "JED",
+                        "CURRENCY": "PKR",
+                        "DURATION": "4h 0m",
+                        "BAGGAGE_FARE": [
+                            {
+                                "sub_class_id": "2",
+                                "sub_class_desc": "Standard Baggage",
+                                "abbr": "SB",
+                                "no_of_bags": "1",
+                                "adv_tax": "0",
+                                "amount": 0,
+                                "actual_amount": 0,
+                                "weight": "20",
+                                "piece": "1",
+                                "FARE_PAX_WISE": {
+                                    "ADULT": {
+                                        "BASIC_FARE": 5150,
+                                        "SURCHARGE": "20000",
+                                        "FEES": "730",
+                                        "TAX": 9800,
+                                        "TOTAL": 35680
+                                    },
+                                    "CHILD": {
+                                        "BASIC_FARE": 3865,
+                                        "SURCHARGE": "20000",
+                                        "FEES": "730",
+                                        "TAX": 9800,
+                                        "TOTAL": 34395
+                                    },
+                                    "INFANT": {
+                                        "BASIC_FARE": "0",
+                                        "SURCHARGE": "0",
+                                        "FEES": "730",
+                                        "TAX": "5000",
+                                        "TOTAL": 5730
+                                    }
+                                }
+                            },
+                            {
+                                "sub_class_id": "3",
+                                "sub_class_desc": "Extra Baggage",
+                                "abbr": "EB",
+                                "no_of_bags": "2",
+                                "adv_tax": "0",
+                                "amount": 3500,
+                                "actual_amount": 3500,
+                                "weight": "40",
+                                "piece": "2",
+                                "FARE_PAX_WISE": {
+                                    "ADULT": {
+                                        "BASIC_FARE": 8650,
+                                        "SURCHARGE": "20000",
+                                        "FEES": "730",
+                                        "TAX": 9800,
+                                        "TOTAL": 39180
+                                    },
+                                    "CHILD": {
+                                        "BASIC_FARE": 7365,
+                                        "SURCHARGE": "20000",
+                                        "FEES": "730",
+                                        "TAX": 9800,
+                                        "TOTAL": 37895
+                                    },
+                                    "INFANT": {
+                                        "BASIC_FARE": "0",
+                                        "SURCHARGE": "0",
+                                        "FEES": "730",
+                                        "TAX": "5000",
+                                        "TOTAL": 5730
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "FLIGHT_NO": "PF2776",
+                        "DEPARTURE_DATE": "25-08-2023",
+                        "DEPARTURE_TIME": "19:00",
+                        "ARRIVAL_TIME": "21:00",
+                        "DEPARTURE_UTC": "25-08-2023 14:00",
+                        "ARRIVAL_UTC": "25-08-2023 18:00",
+                        "JOURNEY_CODE": "186447",
+                        "CLASS_CODE": "5001",
+                        "ORGN": "LHE",
+                        "DEST": "JED",
+                        "CURRENCY": "PKR",
+                        "DURATION": "4h 0m",
+                        "BAGGAGE_FARE": [
+                            {
+                                "sub_class_id": "2",
+                                "sub_class_desc": "Standard Baggage",
+                                "abbr": "SB",
+                                "no_of_bags": "1",
+                                "adv_tax": "0",
+                                "amount": 0,
+                                "actual_amount": 0,
+                                "weight": "20",
+                                "piece": "1",
+                                "FARE_PAX_WISE": {
+                                    "ADULT": {
+                                        "BASIC_FARE": 20000,
+                                        "SURCHARGE": "505",
+                                        "FEES": "0",
+                                        "TAX": 9800,
+                                        "TOTAL": 30305
+                                    },
+                                    "CHILD": {
+                                        "BASIC_FARE": 12500,
+                                        "SURCHARGE": "505",
+                                        "FEES": "0",
+                                        "TAX": 9800,
+                                        "TOTAL": 22805
+                                    },
+                                    "INFANT": {
+                                        "BASIC_FARE": "6000",
+                                        "SURCHARGE": "505",
+                                        "FEES": "0",
+                                        "TAX": "9800",
+                                        "TOTAL": 16305
+                                    }
+                                }
+                            },
+                            {
+                                "sub_class_id": "3",
+                                "sub_class_desc": "Extra Baggage",
+                                "abbr": "EB",
+                                "no_of_bags": "2",
+                                "adv_tax": "0",
+                                "amount": 3500,
+                                "actual_amount": 3500,
+                                "weight": "40",
+                                "piece": "2",
+                                "FARE_PAX_WISE": {
+                                    "ADULT": {
+                                        "BASIC_FARE": 23500,
+                                        "SURCHARGE": "505",
+                                        "FEES": "0",
+                                        "TAX": 9800,
+                                        "TOTAL": 33805
+                                    },
+                                    "CHILD": {
+                                        "BASIC_FARE": 16000,
+                                        "SURCHARGE": "505",
+                                        "FEES": "0",
+                                        "TAX": 9800,
+                                        "TOTAL": 26305
+                                    },
+                                    "INFANT": {
+                                        "BASIC_FARE": "6000",
+                                        "SURCHARGE": "505",
+                                        "FEES": "0",
+                                        "TAX": "9800",
+                                        "TOTAL": 16305
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                ],
+                "availableFareTypes": [
+                    {
+                        "SUB_CLASS_ID": "1",
+                        "SUB_CLASS_DESC": "Nil Baggage",
+                        "ABBR": "NB",
+                        "NO_OF_BAGS": "0",
+                        "ADV_TAX": "0",
+                        "AMOUNT": "-2500",
+                        "ACTUAL_AMOUNT": "-2500",
+                        "WEIGHT": "0",
+                        "PIECE": "0",
+                        "DESCRIPTION": "Nil Baggage"
+                    },
+                    {
+                        "SUB_CLASS_ID": "2",
+                        "SUB_CLASS_DESC": "Standard Baggage",
+                        "ABBR": "SB",
+                        "NO_OF_BAGS": "1",
+                        "ADV_TAX": "0",
+                        "AMOUNT": "0",
+                        "ACTUAL_AMOUNT": "0",
+                        "WEIGHT": "20",
+                        "PIECE": "1",
+                        "DESCRIPTION": "1 Piece(s) ( Total 20 KG )"
+                    },
+                    {
+                        "SUB_CLASS_ID": "3",
+                        "SUB_CLASS_DESC": "Extra Baggage",
+                        "ABBR": "EB",
+                        "NO_OF_BAGS": "2",
+                        "ADV_TAX": "0",
+                        "AMOUNT": "3500",
+                        "ACTUAL_AMOUNT": "3500",
+                        "WEIGHT": "40",
+                        "PIECE": "2",
+                        "DESCRIPTION": "2 Piece(s) ( Total 40 KG )"
+                    }
+                ]
+            }
+        },
+        "Success": true,
+        "ErrorCode": 0
     }
 }
