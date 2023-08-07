@@ -4,8 +4,10 @@ namespace App\Http\Controllers\Mappers\Aljazeera;
 
 use App\DataMapper\Airline;
 use App\DataMapper\Airport;
+use App\DataMapper\Fare;
 use App\DataMapper\Flight;
 use App\DataMapper\PassengerClass;
+
 
 
 abstract class classType
@@ -31,8 +33,9 @@ class AljazeeraController
         $data = json_decode($response, true);
         $aljazeeraData = $data["aljazeera"]["data"]["availabilityv4"];
 
-        $availableFairs = $aljazeeraData["faresAvailable"];
         $trips = $aljazeeraData["results"][0]["trips"];
+        $availableFares = $aljazeeraData["faresAvailable"];
+        $currencyCode = $aljazeeraData["currencyCode"];
 
         $allFlights = $trips[0]["journeysAvailableByMarket"][0]["value"];
 
@@ -63,37 +66,38 @@ class AljazeeraController
 
 
         // PassengerClass
-        $passengerClassData = $flightData["fares"];
-
-
-
-        foreach ($passengerClassData as $data) {
-            $fairKey = $data["fareAvailabilityKey"];
-
-
-
-
-            foreach ($availableFairs as $fair) {
-                if ($fair["key"] === $fairKey) {
-                    $fairValue = $fair["value"];
-                    $amount =  $fairValue["totals"]["fareTotal"];
-                    $currency = $fairValue["fares"][0]["passengerFares"][0]["serviceCharges"][0]["currencyCode"];
-                    $type = $fairValue["fares"][0]["productClass"];
-                    // $mappedType = isset(classType::$$type) ? classType::$$type : $type;
-                    // echo $mappedType;
+        $fares = $flightData["fares"];
+        //Looping fares 
+        foreach ($fares as $fare) {
+            $fairKey = $fare["fareAvailabilityKey"];
+            // Looping fares available - to find the fair mapped to fairKey
+            foreach ($availableFares as $availableFare) {
+                if ($availableFare["key"] === $fairKey) {
+                    $fairValue = $availableFare["value"];
+                    $class = $fairValue["fares"][0]["productClass"];
+                    $weight = null;
+                    $bags_allowed = null;
+                    $currency = $currencyCode;
+                    $PassengerClass = new PassengerClass(
+                        $class,
+                        $weight,
+                        $bags_allowed,
+                        $currency
+                    );
+                    $passengerFares = $fairValue["fares"][0]["passengerFares"];
+                    foreach ($passengerFares as $passengerFare) {
+                        // dd($passengerFare);
+                        $passengerType = $passengerFare["passengerType"];
+                        $amount = $passengerFare["fareAmount"];
+                        $Fare = new Fare(
+                            $passengerType,
+                            $amount
+                        );
+                        $PassengerClass->setFares($Fare);
+                    }
+                    $Flight->setPassengerClass($PassengerClass);
                 }
             }
-            // $PassengerClass = new PassengerClass(
-            //     $type,
-            //     $data["details"][0]["availableCount"],
-            //     $amount,
-            //     $currency
-            // );
-            // $Flight->setPassengerClass($PassengerClass);
-
-
-            // $availableFairs= 
-            // echo $fairKey;
         }
 
 
@@ -102,6 +106,6 @@ class AljazeeraController
 
 
         dd($Flight);
-        return $availableFairs;
+        return $availableFares;
     }
 }

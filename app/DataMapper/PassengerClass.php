@@ -10,8 +10,7 @@ class PassengerClass
 {
     protected $fares = [];
     public function __construct(
-        protected $type,
-        protected $seats_left,
+        protected $class,
         protected $weight,
         protected $bags_allowed, 
         protected $currency

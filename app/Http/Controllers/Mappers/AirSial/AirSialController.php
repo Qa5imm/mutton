@@ -13,7 +13,7 @@ use App\Http\Controllers\Controller;
 
 
 
-enum classType
+enum passType
 {
     case ADULT;
     case CHILD;
@@ -67,17 +67,16 @@ class AirSialController extends Controller
             foreach ($baggeFares as $baggeFare) {
                 $PassengerClass = new PassengerClass(
                     $baggeFare["sub_class_desc"],
-                    null,
                     $baggeFare["weight"],
                     $baggeFare["no_of_bags"],
                     $flightData['CURRENCY'],
                 );
                 $farePaxWise = $baggeFare["FARE_PAX_WISE"];
-                foreach (classType::cases() as $type) {
-                    $classType = $type->name;
+                foreach (passType::cases() as $type) {
+                    $passType = $type->name;
                     $Fare = new Fare(
-                        $classType,
-                        $farePaxWise[$classType]["TOTAL"]
+                        $passType,
+                        $farePaxWise[$passType]["TOTAL"]
                     );
                     $PassengerClass->setFares($Fare);
                 }
