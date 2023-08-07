@@ -83,13 +83,13 @@ class AljazeeraController
                     // echo $mappedType;
                 }
             }
-            $PassengerClass = new PassengerClass(
-                $type,
-                $data["details"][0]["availableCount"],
-                $amount,
-                $currency
-            );
-            $Flight->setPassengerClass($PassengerClass);
+            // $PassengerClass = new PassengerClass(
+            //     $type,
+            //     $data["details"][0]["availableCount"],
+            //     $amount,
+            //     $currency
+            // );
+            // $Flight->setPassengerClass($PassengerClass);
 
 
             // $availableFairs= 

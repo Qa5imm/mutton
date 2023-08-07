@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Mappers\AirSial;
 
 use App\DataMapper\Airline;
 use App\DataMapper\Airport;
-use App\DataMapper\Baggage;
+use App\DataMapper\Fare;
 use App\DataMapper\Flight;
 use App\DataMapper\PassengerClass;
 use App\Http\Controllers\Controller;
@@ -60,29 +60,55 @@ class AirSialController extends Controller
                 $Flight->setAirport($type->name, $airport);
             }
 
-            $allbaggages = $flightData["BAGGAGE_FARE"];
-            foreach ($allbaggages as $baggageData) {
-                $Baggage = new Baggage(
-                    $baggageData["sub_class_desc"],
-                    $baggageData["no_of_bags"],
-                    $baggageData["amount"],
-                    $baggageData["weight"]
-                );
-                $Flight->setBaggage($Baggage);
-            }
+
 
             // Passenger Class 
-            foreach (classType::cases() as $type) {
-                $classType = $type->name;
-                $passengerClassData = $flightData["BAGGAGE_FARE"][0]["FARE_PAX_WISE"];
+            $baggeFares = $flightData["BAGGAGE_FARE"];
+            foreach ($baggeFares as $baggeFare) {
                 $PassengerClass = new PassengerClass(
-                    $classType,
+                    $baggeFare["sub_class_desc"],
                     null,
-                    $passengerClassData[$classType]["TOTAL"],
+                    $baggeFare["weight"],
+                    $baggeFare["no_of_bags"],
                     $flightData['CURRENCY'],
                 );
+                $farePaxWise = $baggeFare["FARE_PAX_WISE"];
+                foreach (classType::cases() as $type) {
+                    $classType = $type->name;
+                    $Fare = new Fare(
+                        $classType,
+                        $farePaxWise[$classType]["TOTAL"]
+                    );
+                    $PassengerClass->setFares($Fare);
+                }
                 $Flight->setPassengerClass($PassengerClass);
             }
+
+
+
+
+
+            // foreach (classType::cases() as $type) {
+            //     $classType = $type->name;
+            //     $passengerClassData = $flightData["BAGGAGE_FARE"][0]["FARE_PAX_WISE"];
+            //     $PassengerClass = new PassengerClass(
+            //         $classType,
+            //         null,
+            //         $passengerClassData[$classType]["TOTAL"],
+            //         $flightData['CURRENCY'],
+            //     );
+            //     $allfares = $flightData["BAGGAGE_FARE"];
+            //     foreach ($allfares as $fareData) {
+            //         $Fare = new Fare(
+            //             $fareData["sub_class_desc"],
+            //             $fareData["no_of_bags"],
+            //             $fareData["amount"],
+            //             $fareData["weight"]
+            //         );
+            //         $PassengerClass->setFairs($Fare);
+            //     }
+            //     $Flight->setPassengerClass($PassengerClass);
+            // }
 
 
             // Airline

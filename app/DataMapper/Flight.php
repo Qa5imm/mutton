@@ -3,14 +3,13 @@
 namespace App\DataMapper;
 
 use App\DataMapper\Airport;
-use App\DataMapper\Baggage;
+use App\DataMapper\Fare;
 use App\DataMapper\Segment;
 use App\DataMapper\PassengerClass;
 
 class Flight
 {
     protected $passengerClass = [];
-    protected $baggage = [];
     protected $segments = [];
     protected Airport $origin;
     protected Airport $destination;
@@ -29,11 +28,6 @@ class Flight
     {
         $this->passengerClass[] = $passengerClass;
     }
-    public function setBaggage(Baggage $baggage)
-    {
-        $this->baggage[] = $baggage;
-    }
-
     public function setSegments(Segment $segments)
     {
         $this->segments[] = $segments;
