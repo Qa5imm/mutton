@@ -1,0 +1,17 @@
+In case a segments array has only one element, what to do in that case
+No duration in jazeera
+
+how airsial second one is less than the first one
+
+prices diff on airsial website compared to api
+
+
+
+
+
+Things left to do tommorrow:
+calculate time duration (carbob) --both
+add segments --done
+total fare -- add in aljazeera done in airsial
+move date of a flight up the object --both
+
