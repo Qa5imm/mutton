@@ -8,10 +8,8 @@ use App\DataMapper\Flight;
 class Airline
 {
     protected $flights = [];
-    public function __construct(protected $airline,  protected $logo)
+    public function __construct(protected $airline,  protected $logo, protected $travllers, protected $date)
     {
-        $this->airline = $airline;
-        $this->logo = $logo;
     }
     public function setFlight(Flight $flight)
     {

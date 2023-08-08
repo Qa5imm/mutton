@@ -45,11 +45,11 @@ class AljazeeraController
         $currencyCode = $aljazeeraData["currencyCode"];
 
         $allFlights = $trips[0]["journeysAvailableByMarket"][0]["value"];
-        $dep_date = $trips[0]["date"];
+        $depDate = $trips[0]["date"];
+        $formattedDepDate= explode("T",$depDate)[0];
 
-
-        // Airline
-        $Airline = new Airline("Aljazeera", "logo");
+        //Airline- highest heirarchy object
+        $Airline = new Airline("Aljazeera", "logo", $travellers, $formattedDepDate);
 
 
         // Flight  
@@ -64,7 +64,7 @@ class AljazeeraController
                 $flightData["journeyKey"],
                 new Airport(null, null, $designator["origin"]),
                 new Airport(null, null, $designator["destination"]),
-                $dep_date,
+                $depDate,
                 $depTime,
                 $arrTime,
                 $duration

@@ -43,9 +43,11 @@ class AirSialController extends Controller
 
         $allFlights = $data["outbound"];
 
-        // highest heirarchy object
-        $Airline = new Airline("AirSial", "logo");
+        //Airline- highest heirarchy object
+        $dep_date = $allFlights[0]["DEPARTURE_DATE"];
+        $Airline = new Airline("Aljazeera", "logo", $travellers, $dep_date);
 
+        // Flight  
         foreach ($allFlights as $flightData) {
             $depTime =   $flightData['DEPARTURE_DATE'] . "T" . $flightData['DEPARTURE_TIME'];
             $arrTime = $flightData['DEPARTURE_DATE'] . "T" . $flightData['ARRIVAL_TIME'];
