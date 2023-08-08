@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Mappers\AirSial\AirSialController;
 use App\Http\Controllers\Mappers\Aljazeera\AljazeeraController;
+use App\Http\Controllers\Mappers\MapperController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,3 +27,4 @@ Route::get('/home', function () {
 
 Route::get('/airsial', [AirSialController::class, 'getAirlineData']);
 Route::get('/aljazeera', [AljazeeraController::class, 'getAirlineData']);
+Route::get('/getflights',[MapperController::class, 'getData']);

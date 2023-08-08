@@ -2,7 +2,9 @@
 
 namespace App\DataMapper;
 use App\DataMapper\Airport;
-class Segment
+use JsonSerializable;
+
+class Segment implements JsonSerializable
 {
     public function __construct(
         protected Airport $origin,
@@ -11,5 +13,9 @@ class Segment
         protected $arrival,
         protected $duration
     ) {
+    }
+    public function jsonSerialize()
+    {
+        return get_object_vars($this);
     }
 }

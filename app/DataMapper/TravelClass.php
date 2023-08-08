@@ -4,7 +4,9 @@ namespace App\DataMapper;
 
 
 use App\DataMapper\Fare;
-class TravelClass
+use JsonSerializable;
+
+class TravelClass implements JsonSerializable
 {
     protected $fares = [];
     protected $total_fare;
@@ -23,5 +25,9 @@ class TravelClass
 
     public function setTotalFare(float $total){
         $this->total_fare= $total;
+    }
+    public function jsonSerialize()
+    {
+        return get_object_vars($this);
     }
 }

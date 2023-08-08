@@ -11,7 +11,7 @@ use App\DataMapper\Segment;
 use App\DataMapper\TravelClass;
 use App\Http\Controllers\Controller;
 
-include __DIR__ . '/../utils/utils.php';
+include_once __DIR__ . '/../utils/utils.php';
 
 
 enum passType
@@ -26,7 +26,7 @@ enum passType
 
 class AirSialController extends Controller
 {
-    protected $travellers = array(
+    protected static $travellers = array(
         'ADULT' => array(
             'count' => 3
         ),
@@ -38,11 +38,12 @@ class AirSialController extends Controller
         )
     );
 
-    public function getAirlineData()
+    public static function getAirlineData($data)
     {
+        // dd("airsial");
 
-        $response = file_get_contents("./api.json");
-        $data = json_decode($response, true);
+        // $response = file_get_contents("./api.json");
+        // $data = json_decode($response, true);
         $airSialData = $data["airsial"];
         $data = $airSialData["Response"]["Data"];
 
@@ -50,7 +51,7 @@ class AirSialController extends Controller
 
         //Airline- highest heirarchy object
         $dep_date = $allFlights[0]["DEPARTURE_DATE"];
-        $Airline = new Airline("Airsial", "logo", $this->travellers, $dep_date);
+        $Airline = new Airline("Airsial", "logo", self::$travellers, $dep_date);
 
         // Flight  
         foreach ($allFlights as $flightData) {
@@ -83,8 +84,8 @@ class AirSialController extends Controller
                 $totalFare = 0;
                 foreach (passType::cases() as $type) {
                     $passType = $type->name;
-                    if ($this->travellers[$passType]['count'] !== 0) {
-                        $totalAmount = $farePaxWise[$passType]["TOTAL"] * $this->travellers[$passType]['count']; // mutliplying base fare of a class with number of travellers in that class
+                    if (self::$travellers[$passType]['count'] !== 0) {
+                        $totalAmount = $farePaxWise[$passType]["TOTAL"] * self::$travellers[$passType]['count']; // mutliplying base fare of a class with number of travellers in that class
                         $totalFare += $totalAmount;
                         $Fare = new Fare(        //Fare
                             $passType,
@@ -115,6 +116,7 @@ class AirSialController extends Controller
             // Airline
             $Airline->setFlight($Flight);
         }
-        dd($Airline);
+        return $Airline;
+
     }
 }

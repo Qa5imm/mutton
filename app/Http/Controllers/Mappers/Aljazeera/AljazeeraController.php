@@ -8,24 +8,24 @@ use App\DataMapper\Fare;
 use App\DataMapper\Flight;
 use App\DataMapper\TravelClass;
 use App\DataMapper\Segment;
+use JsonSerializable;
 
-
-include __DIR__ . '/../utils/utils.php';
+include_once __DIR__ . '/../utils/utils.php';
 
 // Economy Class Mapper
 
 
 
 
-class AljazeeraController
+class AljazeeraController 
 {
-    protected $mapping = array(
+    protected static $mapping = array(
         'EL' => 'Economy Light',
         'EV' => 'Economy Value',
         'EE' => 'Economy Extra',
         'BU' => 'Business'
     );
-    protected  $travellers = array(
+    protected static $travellers = array(
         'ADT' => array(
             'count' => 2
         ),
@@ -34,11 +34,11 @@ class AljazeeraController
         ),
     );
 
-    public function getAirlineData()
-    {
 
-        $response = file_get_contents("./api.json");
-        $data = json_decode($response, true);
+    public static function getAirlineData($data)
+    {
+        // $response = file_get_contents("./api.json");
+        // $data = json_decode($response, true);
         $aljazeeraData = $data["aljazeera-multiple"]["data"]["availabilityv4"];
 
         $trips = $aljazeeraData["results"][0]["trips"];
@@ -50,7 +50,7 @@ class AljazeeraController
         $formattedDepDate = explode("T", $depDate)[0];
 
         //Airline- highest heirarchy object
-        $Airline = new Airline("Aljazeera", "logo", $this->travellers, $formattedDepDate);
+        $Airline = new Airline("Aljazeera", "logo", self::$travellers, $formattedDepDate);
 
 
         // Flight  
@@ -82,7 +82,7 @@ class AljazeeraController
                     if ($availableFare["key"] === $fairKey) {
                         $fairValue = $availableFare["value"];
                         $class = $fairValue["fares"][0]["productClass"];
-                        $mappedClass = $this->mapping[$class];
+                        $mappedClass = self::$mapping[$class];
                         $weight = null;
                         $bags_allowed = null;
                         $currency = $currencyCode;
@@ -96,7 +96,7 @@ class AljazeeraController
                         $totalFare = 0;
                         foreach ($passengerFares as $passengerFare) {
                             $passengerType = $passengerFare["passengerType"];
-                            $totalAmount = $passengerFare["fareAmount"] * $this->travellers[$passengerType]['count'];
+                            $totalAmount = $passengerFare["fareAmount"] * self::$travellers[$passengerType]['count'];
                             $totalFare += $totalAmount;
                             $Fare = new Fare(        //Fare
                                 $passengerType,
@@ -130,6 +130,6 @@ class AljazeeraController
             }
             $Airline->setFlight($Flight);
         }
-        dd($Airline);
+        return $Airline;
     }
 }
