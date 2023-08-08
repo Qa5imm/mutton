@@ -1,7 +1,7 @@
 <?php
 
-namespace App\Http\Controllers\Mappers\AirSial;
 
+namespace App\Http\Controllers\Mappers\AirSial;
 
 use App\DataMapper\Airline;
 use App\DataMapper\Airport;
@@ -11,15 +11,16 @@ use App\DataMapper\Segment;
 use App\DataMapper\TravelClass;
 use App\Http\Controllers\Controller;
 
+include __DIR__ . '/../utils/utils.php';
+
 
 enum passType
 {
     case ADULT;
     case CHILD;
     case INFANT;
+
 }
-
-
 class AirSialController extends Controller
 {
 
@@ -47,6 +48,9 @@ class AirSialController extends Controller
         $Airline = new Airline("AirSial", "logo");
 
         foreach ($allFlights as $flightData) {
+            $depTime =   $flightData['DEPARTURE_DATE'] . "T" . $flightData['DEPARTURE_TIME'];
+            $arrTime = $flightData['DEPARTURE_DATE'] . "T" . $flightData['ARRIVAL_TIME'];
+            $duration = calculateTimeDuration($depTime, $arrTime);
             $Flight = new Flight(
                 null,
                 null,
@@ -54,9 +58,9 @@ class AirSialController extends Controller
                 new Airport(null, null, $flightData["ORGN"]),
                 new Airport(null, null, $flightData["DEST"]),
                 $flightData['DEPARTURE_DATE'],
-                $flightData['DEPARTURE_DATE'] . "T" . $flightData['DEPARTURE_TIME'],
-                $flightData['DEPARTURE_DATE'] . "T" . $flightData['ARRIVAL_TIME'],
-                $flightData['DURATION']
+                $depTime,
+                $arrTime,
+                $duration
             );
 
             // Passenger Class 
