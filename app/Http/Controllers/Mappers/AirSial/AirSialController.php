@@ -19,7 +19,6 @@ enum passType
     case ADULT;
     case CHILD;
     case INFANT;
-
 }
 class AirSialController extends Controller
 {
@@ -92,11 +91,15 @@ class AirSialController extends Controller
 
 
             if (!isset($flightData["segments"])) {
+                $depTime = $flightData['DEPARTURE_DATE'] . "T" . $flightData['DEPARTURE_TIME'];
+                $arrTime = $flightData['DEPARTURE_DATE'] . "T" . $flightData['ARRIVAL_TIME'];
+                $duration = calculateTimeDuration($depTime, $arrTime);
                 $Segment = new Segment(
                     new Airport(null, null, $flightData["ORGN"]),
                     new Airport(null, null, $flightData["DEST"]),
-                    $flightData['DEPARTURE_DATE'] . "T" . $flightData['DEPARTURE_TIME'],
-                    $flightData['DEPARTURE_DATE'] . "T" . $flightData['ARRIVAL_TIME'],
+                    $depTime,
+                    $arrTime,
+                    $duration
                 );
                 $Flight->setSegments($Segment);
             }
