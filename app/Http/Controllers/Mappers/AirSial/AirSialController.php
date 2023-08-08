@@ -22,23 +22,24 @@ enum passType
 }
 
 
-$travellers = array(
-    'ADT' => array(
-        'count' => 3
-    ),
-    'CHD' => array(
-        'count' => 0
-    ),
-);
+
 
 class AirSialController extends Controller
 {
-    
+    protected $travellers = array(
+        'ADULT' => array(
+            'count' => 3
+        ),
+        'CHILD' => array(
+            'count' => 0
+        ),
+        'INFANT' => array(
+            'count' => 0
+        )
+    );
+
     public function getAirlineData()
     {
-        // global variables
-        global $travellers;
-
 
         $response = file_get_contents("./api.json");
         $data = json_decode($response, true);
@@ -49,7 +50,7 @@ class AirSialController extends Controller
 
         //Airline- highest heirarchy object
         $dep_date = $allFlights[0]["DEPARTURE_DATE"];
-        $Airline = new Airline("Aljazeera", "logo", $travellers, $dep_date);
+        $Airline = new Airline("Aljazeera", "logo", $this->travellers, $dep_date);
 
         // Flight  
         foreach ($allFlights as $flightData) {
@@ -82,8 +83,8 @@ class AirSialController extends Controller
                 $totalFare = 0;
                 foreach (passType::cases() as $type) {
                     $passType = $type->name;
-                    if ($travellers[$passType]['count'] !== 0) {
-                        $totalAmount = $farePaxWise[$passType]["TOTAL"] * $travellers[$passType]['count']; // mutliplying base fare of a class with number of travellers in that class
+                    if ($this->travellers[$passType]['count'] !== 0) {
+                        $totalAmount = $farePaxWise[$passType]["TOTAL"] * $this->travellers[$passType]['count']; // mutliplying base fare of a class with number of travellers in that class
                         $totalFare += $totalAmount;
                         $Fare = new Fare(        //Fare
                             $passType,

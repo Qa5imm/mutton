@@ -13,32 +13,29 @@ use App\DataMapper\Segment;
 include __DIR__ . '/../utils/utils.php';
 
 // Economy Class Mapper
-$mapping = array(
-    'EL' => 'Economy Light',
-    'EV' => 'Economy Value',
-    'EE' => 'Economy Extra',
-    'BU' => 'Business'
-);
 
-$travellers = array(
-    'ADT' => array(
-        'count' => 3
-    ),
-    'CHD' => array(
-        'count' => 0
-    ),
-);
+
 
 
 class AljazeeraController
 {
+    protected $mapping = array(
+        'EL' => 'Economy Light',
+        'EV' => 'Economy Value',
+        'EE' => 'Economy Extra',
+        'BU' => 'Business'
+    );
+    protected  $travellers = array(
+        'ADT' => array(
+            'count' => 3
+        ),
+        'CHD' => array(
+            'count' => 0
+        ),
+    );
 
     public function getAirlineData()
     {
-        // global variables
-        global $mapping;
-        global $travellers;
-
 
         $response = file_get_contents("./api.json");
         $data = json_decode($response, true);
@@ -53,7 +50,7 @@ class AljazeeraController
         $formattedDepDate = explode("T", $depDate)[0];
 
         //Airline- highest heirarchy object
-        $Airline = new Airline("Aljazeera", "logo", $travellers, $formattedDepDate);
+        $Airline = new Airline("Aljazeera", "logo", $this->travellers, $formattedDepDate);
 
 
         // Flight  
@@ -85,7 +82,7 @@ class AljazeeraController
                     if ($availableFare["key"] === $fairKey) {
                         $fairValue = $availableFare["value"];
                         $class = $fairValue["fares"][0]["productClass"];
-                        $mappedClass = $mapping[$class];
+                        $mappedClass = $this->mapping[$class];
                         $weight = null;
                         $bags_allowed = null;
                         $currency = $currencyCode;
@@ -99,7 +96,7 @@ class AljazeeraController
                         $totalFare = 0;
                         foreach ($passengerFares as $passengerFare) {
                             $passengerType = $passengerFare["passengerType"];
-                            $totalAmount = $passengerFare["fareAmount"] * $travellers[$passengerType]['count'];
+                            $totalAmount = $passengerFare["fareAmount"] * $this->travellers[$passengerType]['count'];
                             $totalFare += $totalAmount;
                             $Fare = new Fare(        //Fare
                                 $passengerType,
