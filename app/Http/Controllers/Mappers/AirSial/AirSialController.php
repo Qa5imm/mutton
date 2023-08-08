@@ -20,22 +20,26 @@ enum passType
     case CHILD;
     case INFANT;
 }
+
+
+$travellers = array(
+    'ADT' => array(
+        'count' => 3
+    ),
+    'CHD' => array(
+        'count' => 0
+    ),
+);
+
 class AirSialController extends Controller
 {
-
+    
     public function getAirlineData()
     {
-        $travellers = array(
-            'ADULT' => array(
-                'count' => 2
-            ),
-            'CHILD' => array(
-                'count' => 1
-            ),
-            'INFANT' => array(
-                'count' => 0
-            ),
-        );
+        // global variables
+        global $travellers;
+
+
         $response = file_get_contents("./api.json");
         $data = json_decode($response, true);
         $airSialData = $data["airsial"];
@@ -66,6 +70,7 @@ class AirSialController extends Controller
 
             // Passenger Class 
             $baggeFares = $flightData["BAGGAGE_FARE"];
+            //Looping fares 
             foreach ($baggeFares as $baggeFare) {
                 $TravelClass = new TravelClass(
                     $baggeFare["sub_class_desc"],
@@ -80,7 +85,7 @@ class AirSialController extends Controller
                     if ($travellers[$passType]['count'] !== 0) {
                         $totalAmount = $farePaxWise[$passType]["TOTAL"] * $travellers[$passType]['count']; // mutliplying base fare of a class with number of travellers in that class
                         $totalFare += $totalAmount;
-                        $Fare = new Fare(
+                        $Fare = new Fare(        //Fare
                             $passType,
                             $totalAmount
                         );

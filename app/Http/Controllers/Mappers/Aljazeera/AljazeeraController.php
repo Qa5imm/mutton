@@ -12,6 +12,22 @@ use App\DataMapper\Segment;
 
 include __DIR__ . '/../utils/utils.php';
 
+// Economy Class Mapper
+$mapping = array(
+    'EL' => 'Economy Light',
+    'EV' => 'Economy Value',
+    'EE' => 'Economy Extra',
+    'BU' => 'Business'
+);
+
+$travellers = array(
+    'ADT' => array(
+        'count' => 3
+    ),
+    'CHD' => array(
+        'count' => 0
+    ),
+);
 
 
 class AljazeeraController
@@ -19,22 +35,10 @@ class AljazeeraController
 
     public function getAirlineData()
     {
-        // Economy Class Mapper
-        $mapping = array(
-            'EL' => 'Economy Light',
-            'EV' => 'Economy Value',
-            'EE' => 'Economy Extra',
-            'BU' => 'Business'
-        );
+        // global variables
+        global $mapping;
+        global $travellers;
 
-        $travellers = array(
-            'ADT' => array(
-                'count' => 3
-            ),
-            'CHD' => array(
-                'count' => 0
-            ),
-        );
 
         $response = file_get_contents("./api.json");
         $data = json_decode($response, true);
@@ -46,7 +50,7 @@ class AljazeeraController
 
         $allFlights = $trips[0]["journeysAvailableByMarket"][0]["value"];
         $depDate = $trips[0]["date"];
-        $formattedDepDate= explode("T",$depDate)[0];
+        $formattedDepDate = explode("T", $depDate)[0];
 
         //Airline- highest heirarchy object
         $Airline = new Airline("Aljazeera", "logo", $travellers, $formattedDepDate);
