@@ -40,10 +40,6 @@ class AirSialController extends Controller
 
     public static function getAirlineData($data)
     {
-        // dd("airsial");
-
-        // $response = file_get_contents("./api.json");
-        // $data = json_decode($response, true);
         $airSialData = $data["airsial"];
         $data = $airSialData["Response"]["Data"];
 
