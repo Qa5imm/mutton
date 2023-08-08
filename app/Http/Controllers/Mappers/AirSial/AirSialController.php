@@ -50,7 +50,7 @@ class AirSialController extends Controller
 
         //Airline- highest heirarchy object
         $dep_date = $allFlights[0]["DEPARTURE_DATE"];
-        $Airline = new Airline("Aljazeera", "logo", $this->travellers, $dep_date);
+        $Airline = new Airline("Airsial", "logo", $this->travellers, $dep_date);
 
         // Flight  
         foreach ($allFlights as $flightData) {

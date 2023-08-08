@@ -27,10 +27,10 @@ class AljazeeraController
     );
     protected  $travellers = array(
         'ADT' => array(
-            'count' => 3
+            'count' => 2
         ),
         'CHD' => array(
-            'count' => 0
+            'count' => 1
         ),
     );
 
@@ -39,7 +39,7 @@ class AljazeeraController
 
         $response = file_get_contents("./api.json");
         $data = json_decode($response, true);
-        $aljazeeraData = $data["aljazeera-travellers"]["data"]["availabilityv4"];
+        $aljazeeraData = $data["aljazeera-multiple"]["data"]["availabilityv4"];
 
         $trips = $aljazeeraData["results"][0]["trips"];
         $availableFares = $aljazeeraData["faresAvailable"];

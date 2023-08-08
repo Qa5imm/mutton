@@ -1326,5 +1326,407 @@
         "metadata": {
             "documentation_url": "http://developer.navitaire.com/documentation/dotrezapi/graphcontrollerv2"
         }
+    },
+    "aljazeera-multiple": {
+        "data": {
+            "availabilityv4": {
+                "results": [
+                    {
+                        "trips": [
+                            {
+                                "date": "2023-08-10T00:00:00",
+                                "journeysAvailableByMarket": [
+                                    {
+                                        "key": "DXB|HYD",
+                                        "value": [
+                                            {
+                                                "flightType": "Connect",
+                                                "stops": 1,
+                                                "designator": {
+                                                    "origin": "DXB",
+                                                    "destination": "HYD",
+                                                    "arrival": "2023-08-11T02:00:00",
+                                                    "departure": "2023-08-10T10:50:00"
+                                                },
+                                                "journeyKey": "Sjl_IDEyMn4gfn5EWEJ_MDgvMTAvMjAyMyAxMDo1MH5LV0l_MDgvMTAvMjAyMyAxMTozNX5_Xko5fiA0MDN_IH5_S1dJfjA4LzEwLzIwMjMgMTg6NDV_SFlEfjA4LzExLzIwMjMgMDI6MDB_fg--",
+                                                "fares": [
+                                                    {
+                                                        "fareAvailabilityKey": "MH5ZfiB_Sjl_WUxTUE9XQUV_WEUzMH5_MH4xMX5_WCEw",
+                                                        "details": [
+                                                            {
+                                                                "availableCount": 9,
+                                                                "status": "Active",
+                                                                "reference": "MH5ZfiB_Sjl_WUxTUE9XQUV_WEUzMH5_MH4xMX5_WA--"
+                                                            }
+                                                        ]
+                                                    }
+                                                ],
+                                                "segments": [
+                                                    {
+                                                        "segmentKey": "Sjl_IDEyMn4gfn5EWEJ_MDgvMTAvMjAyMyAxMDo1MH5LV0l_MDgvMTAvMjAyMyAxMTozNX5_",
+                                                        "isChangeOfGauge": false,
+                                                        "designator": {
+                                                            "origin": "DXB",
+                                                            "destination": "KWI",
+                                                            "arrival": "2023-08-10T11:35:00",
+                                                            "departure": "2023-08-10T10:50:00"
+                                                        },
+                                                        "identifier": {
+                                                            "identifier": "122",
+                                                            "carrierCode": "J9",
+                                                            "opSuffix": null
+                                                        },
+                                                        "legs": [
+                                                            {
+                                                                "designator": {
+                                                                    "origin": "DXB",
+                                                                    "destination": "KWI",
+                                                                    "departure": "2023-08-10T10:50:00",
+                                                                    "arrival": "2023-08-10T11:35:00"
+                                                                },
+                                                                "legInfo": {
+                                                                    "departureTimeUtc": "2023-08-10T06:50:00Z",
+                                                                    "arrivalTimeUtc": "2023-08-10T08:35:00Z",
+                                                                    "departureTerminal": "1",
+                                                                    "arrivalTerminal": "5",
+                                                                    "departureTimeVariant": 240,
+                                                                    "arrivalTimeVariant": 180,
+                                                                    "equipmentType": "320",
+                                                                    "equipmentTypeSuffix": "NHD",
+                                                                    "departureTime": "2023-08-10T10:50:00",
+                                                                    "arrivalTime": "2023-08-10T11:35:00"
+                                                                },
+                                                                "ssrs": []
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "segmentKey": "Sjl_IDQwM34gfn5LV0l_MDgvMTAvMjAyMyAxODo0NX5IWUR_MDgvMTEvMjAyMyAwMjowMH5_",
+                                                        "isChangeOfGauge": false,
+                                                        "designator": {
+                                                            "origin": "KWI",
+                                                            "destination": "HYD",
+                                                            "arrival": "2023-08-11T02:00:00",
+                                                            "departure": "2023-08-10T18:45:00"
+                                                        },
+                                                        "identifier": {
+                                                            "identifier": "403",
+                                                            "carrierCode": "J9",
+                                                            "opSuffix": null
+                                                        },
+                                                        "legs": [
+                                                            {
+                                                                "designator": {
+                                                                    "origin": "KWI",
+                                                                    "destination": "HYD",
+                                                                    "departure": "2023-08-10T18:45:00",
+                                                                    "arrival": "2023-08-11T02:00:00"
+                                                                },
+                                                                "legInfo": {
+                                                                    "departureTimeUtc": "2023-08-10T15:45:00Z",
+                                                                    "arrivalTimeUtc": "2023-08-10T20:30:00Z",
+                                                                    "departureTerminal": "5",
+                                                                    "arrivalTerminal": null,
+                                                                    "departureTimeVariant": 180,
+                                                                    "arrivalTimeVariant": 330,
+                                                                    "equipmentType": "320",
+                                                                    "equipmentTypeSuffix": "NHD",
+                                                                    "departureTime": "2023-08-10T18:45:00",
+                                                                    "arrivalTime": "2023-08-11T02:00:00"
+                                                                },
+                                                                "ssrs": []
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "flightType": "Connect",
+                                                "stops": 1,
+                                                "designator": {
+                                                    "origin": "DXB",
+                                                    "destination": "HYD",
+                                                    "arrival": "2023-08-11T02:00:00",
+                                                    "departure": "2023-08-10T10:50:00"
+                                                },
+                                                "journeyKey": "Sjl_IDEyOH4gfn5EWEJ_MDgvMTAvMjAyMyAxMDo1MH5LV0l_MDgvMTAvMjAyMyAxMTozNX5_Xko5fiA0MDN_IH5_S1dJfjA4LzEwLzIwMjMgMTg6NDV_SFlEfjA4LzExLzIwMjMgMDI6MDB_fg--",
+                                                "fares": [
+                                                    {
+                                                        "fareAvailabilityKey": "MH5ZfiB_Sjl_WUxTUE9XQUV_WEUzMH5_MH4xMX5_WCEw",
+                                                        "details": [
+                                                            {
+                                                                "availableCount": 9,
+                                                                "status": "Active",
+                                                                "reference": "MH5ZfiB_Sjl_WUxTUE9XQUV_WEUzMH5_MH4xMX5_WA--"
+                                                            }
+                                                        ]
+                                                    }
+                                                ],
+                                                "segments": [
+                                                    {
+                                                        "segmentKey": "Sjl_IDEyOH4gfn5EWEJ_MDgvMTAvMjAyMyAxMDo1MH5LV0l_MDgvMTAvMjAyMyAxMTozNX5_",
+                                                        "isChangeOfGauge": false,
+                                                        "designator": {
+                                                            "origin": "DXB",
+                                                            "destination": "KWI",
+                                                            "arrival": "2023-08-10T11:35:00",
+                                                            "departure": "2023-08-10T10:50:00"
+                                                        },
+                                                        "identifier": {
+                                                            "identifier": "128",
+                                                            "carrierCode": "J9",
+                                                            "opSuffix": null
+                                                        },
+                                                        "legs": [
+                                                            {
+                                                                "designator": {
+                                                                    "origin": "DXB",
+                                                                    "destination": "KWI",
+                                                                    "departure": "2023-08-10T10:50:00",
+                                                                    "arrival": "2023-08-10T11:35:00"
+                                                                },
+                                                                "legInfo": {
+                                                                    "departureTimeUtc": "2023-08-10T06:50:00Z",
+                                                                    "arrivalTimeUtc": "2023-08-10T08:35:00Z",
+                                                                    "departureTerminal": "1",
+                                                                    "arrivalTerminal": "5",
+                                                                    "departureTimeVariant": 240,
+                                                                    "arrivalTimeVariant": 180,
+                                                                    "equipmentType": "319",
+                                                                    "equipmentTypeSuffix": "NHD",
+                                                                    "departureTime": "2023-08-10T10:50:00",
+                                                                    "arrivalTime": "2023-08-10T11:35:00"
+                                                                },
+                                                                "ssrs": []
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "segmentKey": "Sjl_IDQwM34gfn5LV0l_MDgvMTAvMjAyMyAxODo0NX5IWUR_MDgvMTEvMjAyMyAwMjowMH5_",
+                                                        "isChangeOfGauge": false,
+                                                        "designator": {
+                                                            "origin": "KWI",
+                                                            "destination": "HYD",
+                                                            "arrival": "2023-08-11T02:00:00",
+                                                            "departure": "2023-08-10T18:45:00"
+                                                        },
+                                                        "identifier": {
+                                                            "identifier": "403",
+                                                            "carrierCode": "J9",
+                                                            "opSuffix": null
+                                                        },
+                                                        "legs": [
+                                                            {
+                                                                "designator": {
+                                                                    "origin": "KWI",
+                                                                    "destination": "HYD",
+                                                                    "departure": "2023-08-10T18:45:00",
+                                                                    "arrival": "2023-08-11T02:00:00"
+                                                                },
+                                                                "legInfo": {
+                                                                    "departureTimeUtc": "2023-08-10T15:45:00Z",
+                                                                    "arrivalTimeUtc": "2023-08-10T20:30:00Z",
+                                                                    "departureTerminal": "5",
+                                                                    "arrivalTerminal": null,
+                                                                    "departureTimeVariant": 180,
+                                                                    "arrivalTimeVariant": 330,
+                                                                    "equipmentType": "320",
+                                                                    "equipmentTypeSuffix": "NHD",
+                                                                    "departureTime": "2023-08-10T18:45:00",
+                                                                    "arrivalTime": "2023-08-11T02:00:00"
+                                                                },
+                                                                "ssrs": []
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "flightType": "Connect",
+                                                "stops": 1,
+                                                "designator": {
+                                                    "origin": "DXB",
+                                                    "destination": "HYD",
+                                                    "arrival": "2023-08-11T02:00:00",
+                                                    "departure": "2023-08-10T16:45:00"
+                                                },
+                                                "journeyKey": "Sjl_IDEyNH4gfn5EWEJ_MDgvMTAvMjAyMyAxNjo0NX5LV0l_MDgvMTAvMjAyMyAxNzozMH5_Xko5fiA0MDN_IH5_S1dJfjA4LzEwLzIwMjMgMTg6NDV_SFlEfjA4LzExLzIwMjMgMDI6MDB_fg--",
+                                                "fares": [
+                                                    {
+                                                        "fareAvailabilityKey": "MH5ZfiB_Sjl_WUxTUE9XQUV_WEUzMH5_MH4xMX5_WCEw",
+                                                        "details": [
+                                                            {
+                                                                "availableCount": 9,
+                                                                "status": "Active",
+                                                                "reference": "MH5ZfiB_Sjl_WUxTUE9XQUV_WEUzMH5_MH4xMX5_WA--"
+                                                            }
+                                                        ]
+                                                    }
+                                                ],
+                                                "segments": [
+                                                    {
+                                                        "segmentKey": "Sjl_IDEyNH4gfn5EWEJ_MDgvMTAvMjAyMyAxNjo0NX5LV0l_MDgvMTAvMjAyMyAxNzozMH5_",
+                                                        "isChangeOfGauge": false,
+                                                        "designator": {
+                                                            "origin": "DXB",
+                                                            "destination": "KWI",
+                                                            "arrival": "2023-08-10T17:30:00",
+                                                            "departure": "2023-08-10T16:45:00"
+                                                        },
+                                                        "identifier": {
+                                                            "identifier": "124",
+                                                            "carrierCode": "J9",
+                                                            "opSuffix": null
+                                                        },
+                                                        "legs": [
+                                                            {
+                                                                "designator": {
+                                                                    "origin": "DXB",
+                                                                    "destination": "KWI",
+                                                                    "departure": "2023-08-10T16:45:00",
+                                                                    "arrival": "2023-08-10T17:30:00"
+                                                                },
+                                                                "legInfo": {
+                                                                    "departureTimeUtc": "2023-08-10T12:45:00Z",
+                                                                    "arrivalTimeUtc": "2023-08-10T14:30:00Z",
+                                                                    "departureTerminal": "1",
+                                                                    "arrivalTerminal": "5",
+                                                                    "departureTimeVariant": 240,
+                                                                    "arrivalTimeVariant": 180,
+                                                                    "equipmentType": "320",
+                                                                    "equipmentTypeSuffix": "NHD",
+                                                                    "departureTime": "2023-08-10T16:45:00",
+                                                                    "arrivalTime": "2023-08-10T17:30:00"
+                                                                },
+                                                                "ssrs": []
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "segmentKey": "Sjl_IDQwM34gfn5LV0l_MDgvMTAvMjAyMyAxODo0NX5IWUR_MDgvMTEvMjAyMyAwMjowMH5_",
+                                                        "isChangeOfGauge": false,
+                                                        "designator": {
+                                                            "origin": "KWI",
+                                                            "destination": "HYD",
+                                                            "arrival": "2023-08-11T02:00:00",
+                                                            "departure": "2023-08-10T18:45:00"
+                                                        },
+                                                        "identifier": {
+                                                            "identifier": "403",
+                                                            "carrierCode": "J9",
+                                                            "opSuffix": null
+                                                        },
+                                                        "legs": [
+                                                            {
+                                                                "designator": {
+                                                                    "origin": "KWI",
+                                                                    "destination": "HYD",
+                                                                    "departure": "2023-08-10T18:45:00",
+                                                                    "arrival": "2023-08-11T02:00:00"
+                                                                },
+                                                                "legInfo": {
+                                                                    "departureTimeUtc": "2023-08-10T15:45:00Z",
+                                                                    "arrivalTimeUtc": "2023-08-10T20:30:00Z",
+                                                                    "departureTerminal": "5",
+                                                                    "arrivalTerminal": null,
+                                                                    "departureTimeVariant": 180,
+                                                                    "arrivalTimeVariant": 330,
+                                                                    "equipmentType": "320",
+                                                                    "equipmentTypeSuffix": "NHD",
+                                                                    "departureTime": "2023-08-10T18:45:00",
+                                                                    "arrivalTime": "2023-08-11T02:00:00"
+                                                                },
+                                                                "ssrs": []
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "faresAvailable": [
+                    {
+                        "key": "MH5ZfiB_Sjl_WUxTUE9XQUV_WEUzMH5_MH4xMX5_WCEw",
+                        "value": {
+                            "totals": {
+                                "fareTotal": 5063.4,
+                                "revenueTotal": 4789.2,
+                                "publishedTotal": 4789.2,
+                                "loyaltyTotal": 0.0,
+                                "discountedTotal": 4789.2
+                            },
+                            "fareAvailabilityKey": "MH5ZfiB_Sjl_WUxTUE9XQUV_WEUzMH5_MH4xMX5_WCEw",
+                            "fares": [
+                                {
+                                    "fareBasisCode": "YLSPOWAE",
+                                    "productClass": "EE",
+                                    "passengerFares": [
+                                        {
+                                            "passengerType": "ADT",
+                                            "passengerDiscountCode": null,
+                                            "fareAmount": 2531.7,
+                                            "fareDiscountCode": null,
+                                            "revenueFare": 2394.6,
+                                            "publishedFare": 2394.6,
+                                            "serviceCharges": [
+                                                {
+                                                    "amount": 2394.6,
+                                                    "code": null,
+                                                    "detail": null,
+                                                    "type": "FarePrice",
+                                                    "currencyCode": "AED"
+                                                },
+                                                {
+                                                    "amount": 137.1,
+                                                    "code": null,
+                                                    "detail": "TaxFeeSum",
+                                                    "type": "Tax",
+                                                    "currencyCode": "AED"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "passengerType": "CHD",
+                                            "passengerDiscountCode": null,
+                                            "fareAmount": 2531.7,
+                                            "fareDiscountCode": null,
+                                            "revenueFare": 2394.6,
+                                            "publishedFare": 2394.6,
+                                            "serviceCharges": [
+                                                {
+                                                    "amount": 2394.6,
+                                                    "code": null,
+                                                    "detail": null,
+                                                    "type": "FarePrice",
+                                                    "currencyCode": "AED"
+                                                },
+                                                {
+                                                    "amount": 137.1,
+                                                    "code": null,
+                                                    "detail": "TaxFeeSum",
+                                                    "type": "Tax",
+                                                    "currencyCode": "AED"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "travelClassCode": null
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "currencyCode": "AED",
+                "includeTaxesAndFees": true
+            }
+        },
+        "metadata": {
+            "documentation_url": "http://developer.navitaire.com/documentation/dotrezapi/graphcontrollerv2"
+        }
     }
 }
