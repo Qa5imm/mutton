@@ -25,6 +25,4 @@ Route::get('/home', function () {
     return view('home');
 });
 
-Route::get('/airsial', [AirSialController::class, 'getAirlineData']);
-Route::get('/aljazeera', [AljazeeraController::class, 'getAirlineData']);
 Route::get('/getflights',[MapperController::class, 'getData']);
