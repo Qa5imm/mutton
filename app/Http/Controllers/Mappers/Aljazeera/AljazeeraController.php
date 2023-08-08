@@ -10,7 +10,7 @@ use App\DataMapper\TravelClass;
 use App\DataMapper\Segment;
 
 
-
+include __DIR__ . '/../utils/utils.php';
 
 
 
@@ -47,6 +47,9 @@ class AljazeeraController
         // Flight  
         foreach ($allFlights as $flightData) {
             $designator = $flightData["designator"];
+            $depTime =   $designator["departure"];
+            $arrTime =   $designator["arrival"];
+            $duration = calculateTimeDuration($depTime, $arrTime);
             $Flight = new Flight(
                 null,
                 $flightData["flightType"],
@@ -54,9 +57,9 @@ class AljazeeraController
                 new Airport(null, null, $designator["origin"]),
                 new Airport(null, null, $designator["destination"]),
                 $dep_date,
-                $designator["departure"],
-                $designator["arrival"],
-                "1h"
+                $depTime,
+                $arrTime,
+                $duration
             );
 
 
