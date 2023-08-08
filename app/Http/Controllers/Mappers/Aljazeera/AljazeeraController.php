@@ -17,7 +17,6 @@ include __DIR__ . '/../utils/utils.php';
 class AljazeeraController
 {
 
-
     public function getAirlineData()
     {
         // Economy Class Mapper
@@ -25,12 +24,21 @@ class AljazeeraController
             'EL' => 'Economy Light',
             'EV' => 'Economy Value',
             'EE' => 'Economy Extra',
+            'BU' => 'Business'
+        );
 
+        $travellers = array(
+            'ADT' => array(
+                'count' => 3
+            ),
+            'CHD' => array(
+                'count' => 0
+            ),
         );
 
         $response = file_get_contents("./api.json");
         $data = json_decode($response, true);
-        $aljazeeraData = $data["aljazeera"]["data"]["availabilityv4"];
+        $aljazeeraData = $data["aljazeera-travellers"]["data"]["availabilityv4"];
 
         $trips = $aljazeeraData["results"][0]["trips"];
         $availableFares = $aljazeeraData["faresAvailable"];
@@ -84,15 +92,18 @@ class AljazeeraController
                             $currency
                         );
                         $passengerFares = $fairValue["fares"][0]["passengerFares"];
+                        $totalFare = 0;
                         foreach ($passengerFares as $passengerFare) {
                             $passengerType = $passengerFare["passengerType"];
-                            $amount = $passengerFare["fareAmount"];
+                            $totalAmount = $passengerFare["fareAmount"] * $travellers[$passengerType]['count'];
+                            $totalFare += $totalAmount;
                             $Fare = new Fare(        //Fare
                                 $passengerType,
-                                $amount
+                                $totalAmount
                             );
                             $TravelClass->setFares($Fare);
                         }
+                        $TravelClass->setTotalFare($totalFare);
                         $Flight->setTravelClass($TravelClass);
                     }
                 }

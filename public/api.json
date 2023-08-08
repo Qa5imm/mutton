@@ -872,5 +872,459 @@
         "metadata": {
             "documentation_url": "http://developer.navitaire.com/documentation/dotrezapi/graphcontrollerv2"
         }
+    },
+    "aljazeera-travellers": {
+        "data": {
+            "availabilityv4": {
+                "results": [
+                    {
+                        "trips": [
+                            {
+                                "date": "2023-08-19T00:00:00",
+                                "journeysAvailableByMarket": [
+                                    {
+                                        "key": "KWI|CAI",
+                                        "value": [
+                                            {
+                                                "flightType": "NonStop",
+                                                "stops": 0,
+                                                "designator": {
+                                                    "origin": "KWI",
+                                                    "destination": "CAI",
+                                                    "arrival": "2023-08-19T03:10:00",
+                                                    "departure": "2023-08-19T00:20:00"
+                                                },
+                                                "journeyKey": "Sjl_IDczNX4gfn5LV0l_MDgvMTkvMjAyMyAwMDoyMH5DQUl_MDgvMTkvMjAyMyAwMzoxMH5_",
+                                                "fares": [
+                                                    {
+                                                        "fareAvailabilityKey": "MH5ZfiB_Sjl_WUxTUE9XS1d_WEUzMH5_MH45fn5YITA-",
+                                                        "details": [
+                                                            {
+                                                                "availableCount": 9,
+                                                                "status": "Active",
+                                                                "reference": "MH5ZfiB_Sjl_WUxTUE9XS1d_WEUzMH5_MH45fn5Y"
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "fareAvailabilityKey": "MH5GfiB_Sjl_RkhFRk9XS1d_MzAwMH5_MH4xfn5YITE-",
+                                                        "details": [
+                                                            {
+                                                                "availableCount": 9,
+                                                                "status": "Active",
+                                                                "reference": "MH5GfiB_Sjl_RkhFRk9XS1d_MzAwMH5_MH4xfn5Y"
+                                                            }
+                                                        ]
+                                                    }
+                                                ],
+                                                "segments": [
+                                                    {
+                                                        "segmentKey": "Sjl_IDczNX4gfn5LV0l_MDgvMTkvMjAyMyAwMDoyMH5DQUl_MDgvMTkvMjAyMyAwMzoxMH5_",
+                                                        "isChangeOfGauge": false,
+                                                        "designator": {
+                                                            "origin": "KWI",
+                                                            "destination": "CAI",
+                                                            "arrival": "2023-08-19T03:10:00",
+                                                            "departure": "2023-08-19T00:20:00"
+                                                        },
+                                                        "identifier": {
+                                                            "identifier": "735",
+                                                            "carrierCode": "J9",
+                                                            "opSuffix": null
+                                                        },
+                                                        "legs": [
+                                                            {
+                                                                "designator": {
+                                                                    "origin": "KWI",
+                                                                    "destination": "CAI",
+                                                                    "departure": "2023-08-19T00:20:00",
+                                                                    "arrival": "2023-08-19T03:10:00"
+                                                                },
+                                                                "legInfo": {
+                                                                    "departureTimeUtc": "2023-08-18T21:20:00Z",
+                                                                    "arrivalTimeUtc": "2023-08-19T01:10:00Z",
+                                                                    "departureTerminal": "5",
+                                                                    "arrivalTerminal": "2",
+                                                                    "departureTimeVariant": 180,
+                                                                    "arrivalTimeVariant": 120,
+                                                                    "equipmentType": "320",
+                                                                    "equipmentTypeSuffix": "N",
+                                                                    "departureTime": "2023-08-19T00:20:00",
+                                                                    "arrivalTime": "2023-08-19T03:10:00"
+                                                                },
+                                                                "ssrs": []
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "flightType": "NonStop",
+                                                "stops": 0,
+                                                "designator": {
+                                                    "origin": "KWI",
+                                                    "destination": "CAI",
+                                                    "arrival": "2023-08-19T11:50:00",
+                                                    "departure": "2023-08-19T09:00:00"
+                                                },
+                                                "journeyKey": "Sjl_IDczMX4gfn5LV0l_MDgvMTkvMjAyMyAwOTowMH5DQUl_MDgvMTkvMjAyMyAxMTo1MH5_",
+                                                "fares": [
+                                                    {
+                                                        "fareAvailabilityKey": "MH5ZfiB_Sjl_WUxTUE9XS1d_WEUzMH5_MH45fn5YITA-",
+                                                        "details": [
+                                                            {
+                                                                "availableCount": 9,
+                                                                "status": "Active",
+                                                                "reference": "MH5ZfiB_Sjl_WUxTUE9XS1d_WEUzMH5_MH45fn5Y"
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "fareAvailabilityKey": "MH5GfiB_Sjl_RkhFRk9XS1d_MzAwMH5_MH4xfn5YITE-",
+                                                        "details": [
+                                                            {
+                                                                "availableCount": 9,
+                                                                "status": "Active",
+                                                                "reference": "MH5GfiB_Sjl_RkhFRk9XS1d_MzAwMH5_MH4xfn5Y"
+                                                            }
+                                                        ]
+                                                    }
+                                                ],
+                                                "segments": [
+                                                    {
+                                                        "segmentKey": "Sjl_IDczMX4gfn5LV0l_MDgvMTkvMjAyMyAwOTowMH5DQUl_MDgvMTkvMjAyMyAxMTo1MH5_",
+                                                        "isChangeOfGauge": false,
+                                                        "designator": {
+                                                            "origin": "KWI",
+                                                            "destination": "CAI",
+                                                            "arrival": "2023-08-19T11:50:00",
+                                                            "departure": "2023-08-19T09:00:00"
+                                                        },
+                                                        "identifier": {
+                                                            "identifier": "731",
+                                                            "carrierCode": "J9",
+                                                            "opSuffix": null
+                                                        },
+                                                        "legs": [
+                                                            {
+                                                                "designator": {
+                                                                    "origin": "KWI",
+                                                                    "destination": "CAI",
+                                                                    "departure": "2023-08-19T09:00:00",
+                                                                    "arrival": "2023-08-19T11:50:00"
+                                                                },
+                                                                "legInfo": {
+                                                                    "departureTimeUtc": "2023-08-19T06:00:00Z",
+                                                                    "arrivalTimeUtc": "2023-08-19T09:50:00Z",
+                                                                    "departureTerminal": "5",
+                                                                    "arrivalTerminal": "2",
+                                                                    "departureTimeVariant": 180,
+                                                                    "arrivalTimeVariant": 120,
+                                                                    "equipmentType": "320",
+                                                                    "equipmentTypeSuffix": "N",
+                                                                    "departureTime": "2023-08-19T09:00:00",
+                                                                    "arrivalTime": "2023-08-19T11:50:00"
+                                                                },
+                                                                "ssrs": []
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "flightType": "NonStop",
+                                                "stops": 0,
+                                                "designator": {
+                                                    "origin": "KWI",
+                                                    "destination": "CAI",
+                                                    "arrival": "2023-08-19T22:30:00",
+                                                    "departure": "2023-08-19T19:40:00"
+                                                },
+                                                "journeyKey": "Sjl_IDczM34gfn5LV0l_MDgvMTkvMjAyMyAxOTo0MH5DQUl_MDgvMTkvMjAyMyAyMjozMH5_",
+                                                "fares": [
+                                                    {
+                                                        "fareAvailabilityKey": "MH5ZfiB_Sjl_WUxTUE9XS1d_WEUzMH5_MH45fn5YITA-",
+                                                        "details": [
+                                                            {
+                                                                "availableCount": 9,
+                                                                "status": "Active",
+                                                                "reference": "MH5ZfiB_Sjl_WUxTUE9XS1d_WEUzMH5_MH45fn5Y"
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "fareAvailabilityKey": "MH5GfiB_Sjl_RkhFRk9XS1d_MzAwMH5_MH4xfn5YITE-",
+                                                        "details": [
+                                                            {
+                                                                "availableCount": 9,
+                                                                "status": "Active",
+                                                                "reference": "MH5GfiB_Sjl_RkhFRk9XS1d_MzAwMH5_MH4xfn5Y"
+                                                            }
+                                                        ]
+                                                    }
+                                                ],
+                                                "segments": [
+                                                    {
+                                                        "segmentKey": "Sjl_IDczM34gfn5LV0l_MDgvMTkvMjAyMyAxOTo0MH5DQUl_MDgvMTkvMjAyMyAyMjozMH5_",
+                                                        "isChangeOfGauge": false,
+                                                        "designator": {
+                                                            "origin": "KWI",
+                                                            "destination": "CAI",
+                                                            "arrival": "2023-08-19T22:30:00",
+                                                            "departure": "2023-08-19T19:40:00"
+                                                        },
+                                                        "identifier": {
+                                                            "identifier": "733",
+                                                            "carrierCode": "J9",
+                                                            "opSuffix": null
+                                                        },
+                                                        "legs": [
+                                                            {
+                                                                "designator": {
+                                                                    "origin": "KWI",
+                                                                    "destination": "CAI",
+                                                                    "departure": "2023-08-19T19:40:00",
+                                                                    "arrival": "2023-08-19T22:30:00"
+                                                                },
+                                                                "legInfo": {
+                                                                    "departureTimeUtc": "2023-08-19T16:40:00Z",
+                                                                    "arrivalTimeUtc": "2023-08-19T20:30:00Z",
+                                                                    "departureTerminal": "5",
+                                                                    "arrivalTerminal": "2",
+                                                                    "departureTimeVariant": 180,
+                                                                    "arrivalTimeVariant": 120,
+                                                                    "equipmentType": "320",
+                                                                    "equipmentTypeSuffix": "N",
+                                                                    "departureTime": "2023-08-19T19:40:00",
+                                                                    "arrivalTime": "2023-08-19T22:30:00"
+                                                                },
+                                                                "ssrs": []
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "key": "KWI|SPX",
+                                        "value": [
+                                            {
+                                                "flightType": "NonStop",
+                                                "stops": 0,
+                                                "designator": {
+                                                    "origin": "KWI",
+                                                    "destination": "SPX",
+                                                    "arrival": "2023-08-19T15:45:00",
+                                                    "departure": "2023-08-19T12:55:00"
+                                                },
+                                                "journeyKey": "Sjl_IDc0MX4gfn5LV0l_MDgvMTkvMjAyMyAxMjo1NX5TUFh_MDgvMTkvMjAyMyAxNTo0NX5_",
+                                                "fares": [
+                                                    {
+                                                        "fareAvailabilityKey": "MH5ZfiB_Sjl_WUxTUE9XS1d_WEUzMH5_MH4yfn5YITI-",
+                                                        "details": [
+                                                            {
+                                                                "availableCount": 9,
+                                                                "status": "Active",
+                                                                "reference": "MH5ZfiB_Sjl_WUxTUE9XS1d_WEUzMH5_MH4yfn5Y"
+                                                            }
+                                                        ]
+                                                    }
+                                                ],
+                                                "segments": [
+                                                    {
+                                                        "segmentKey": "Sjl_IDc0MX4gfn5LV0l_MDgvMTkvMjAyMyAxMjo1NX5TUFh_MDgvMTkvMjAyMyAxNTo0NX5_",
+                                                        "isChangeOfGauge": false,
+                                                        "designator": {
+                                                            "origin": "KWI",
+                                                            "destination": "SPX",
+                                                            "arrival": "2023-08-19T15:45:00",
+                                                            "departure": "2023-08-19T12:55:00"
+                                                        },
+                                                        "identifier": {
+                                                            "identifier": "741",
+                                                            "carrierCode": "J9",
+                                                            "opSuffix": null
+                                                        },
+                                                        "legs": [
+                                                            {
+                                                                "designator": {
+                                                                    "origin": "KWI",
+                                                                    "destination": "SPX",
+                                                                    "departure": "2023-08-19T12:55:00",
+                                                                    "arrival": "2023-08-19T15:45:00"
+                                                                },
+                                                                "legInfo": {
+                                                                    "departureTimeUtc": "2023-08-19T09:55:00Z",
+                                                                    "arrivalTimeUtc": "2023-08-19T13:45:00Z",
+                                                                    "departureTerminal": "5",
+                                                                    "arrivalTerminal": null,
+                                                                    "departureTimeVariant": 180,
+                                                                    "arrivalTimeVariant": 120,
+                                                                    "equipmentType": "320",
+                                                                    "equipmentTypeSuffix": "N",
+                                                                    "departureTime": "2023-08-19T12:55:00",
+                                                                    "arrivalTime": "2023-08-19T15:45:00"
+                                                                },
+                                                                "ssrs": []
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "faresAvailable": [
+                    {
+                        "key": "MH5ZfiB_Sjl_WUxTUE9XS1d_WEUzMH5_MH45fn5YITA-",
+                        "value": {
+                            "totals": {
+                                "fareTotal": 492.21,
+                                "revenueTotal": 460.05,
+                                "publishedTotal": 460.05,
+                                "loyaltyTotal": 0.0,
+                                "discountedTotal": 460.05
+                            },
+                            "fareAvailabilityKey": "MH5ZfiB_Sjl_WUxTUE9XS1d_WEUzMH5_MH45fn5YITA-",
+                            "fares": [
+                                {
+                                    "fareBasisCode": "YLSPOWKW",
+                                    "productClass": "EE",
+                                    "passengerFares": [
+                                        {
+                                            "passengerType": "ADT",
+                                            "passengerDiscountCode": null,
+                                            "fareAmount": 164.07,
+                                            "fareDiscountCode": null,
+                                            "revenueFare": 153.35,
+                                            "publishedFare": 153.35,
+                                            "serviceCharges": [
+                                                {
+                                                    "amount": 153.35,
+                                                    "code": null,
+                                                    "detail": null,
+                                                    "type": "FarePrice",
+                                                    "currencyCode": "KWD"
+                                                },
+                                                {
+                                                    "amount": 10.72,
+                                                    "code": null,
+                                                    "detail": "TaxFeeSum",
+                                                    "type": "Tax",
+                                                    "currencyCode": "KWD"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "travelClassCode": null
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "key": "MH5GfiB_Sjl_RkhFRk9XS1d_MzAwMH5_MH4xfn5YITE-",
+                        "value": {
+                            "totals": {
+                                "fareTotal": 871.71,
+                                "revenueTotal": 837.0,
+                                "publishedTotal": 837.0,
+                                "loyaltyTotal": 0.0,
+                                "discountedTotal": 837.0
+                            },
+                            "fareAvailabilityKey": "MH5GfiB_Sjl_RkhFRk9XS1d_MzAwMH5_MH4xfn5YITE-",
+                            "fares": [
+                                {
+                                    "fareBasisCode": "FHEFOWKW",
+                                    "productClass": "BU",
+                                    "passengerFares": [
+                                        {
+                                            "passengerType": "ADT",
+                                            "passengerDiscountCode": null,
+                                            "fareAmount": 290.57,
+                                            "fareDiscountCode": null,
+                                            "revenueFare": 279.0,
+                                            "publishedFare": 279.0,
+                                            "serviceCharges": [
+                                                {
+                                                    "amount": 279.0,
+                                                    "code": null,
+                                                    "detail": null,
+                                                    "type": "FarePrice",
+                                                    "currencyCode": "KWD"
+                                                },
+                                                {
+                                                    "amount": 11.57,
+                                                    "code": null,
+                                                    "detail": "TaxFeeSum",
+                                                    "type": "Tax",
+                                                    "currencyCode": "KWD"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "travelClassCode": null
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "key": "MH5ZfiB_Sjl_WUxTUE9XS1d_WEUzMH5_MH4yfn5YITI-",
+                        "value": {
+                            "totals": {
+                                "fareTotal": 717.21,
+                                "revenueTotal": 685.05,
+                                "publishedTotal": 685.05,
+                                "loyaltyTotal": 0.0,
+                                "discountedTotal": 685.05
+                            },
+                            "fareAvailabilityKey": "MH5ZfiB_Sjl_WUxTUE9XS1d_WEUzMH5_MH4yfn5YITI-",
+                            "fares": [
+                                {
+                                    "fareBasisCode": "YLSPOWKW",
+                                    "productClass": "EE",
+                                    "passengerFares": [
+                                        {
+                                            "passengerType": "ADT",
+                                            "passengerDiscountCode": null,
+                                            "fareAmount": 239.07,
+                                            "fareDiscountCode": null,
+                                            "revenueFare": 228.35,
+                                            "publishedFare": 228.35,
+                                            "serviceCharges": [
+                                                {
+                                                    "amount": 228.35,
+                                                    "code": null,
+                                                    "detail": null,
+                                                    "type": "FarePrice",
+                                                    "currencyCode": "KWD"
+                                                },
+                                                {
+                                                    "amount": 10.72,
+                                                    "code": null,
+                                                    "detail": "TaxFeeSum",
+                                                    "type": "Tax",
+                                                    "currencyCode": "KWD"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "travelClassCode": null
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "currencyCode": "KWD",
+                "includeTaxesAndFees": true
+            }
+        },
+        "metadata": {
+            "documentation_url": "http://developer.navitaire.com/documentation/dotrezapi/graphcontrollerv2"
+        }
     }
 }

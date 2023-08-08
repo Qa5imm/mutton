@@ -21,7 +21,7 @@ class TravelClass
         $this->fares[] = $fare;
     }
 
-    public function setTotalFare(int $total){
+    public function setTotalFare(float $total){
         $this->total_fare= $total;
     }
 }

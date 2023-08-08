@@ -16,3 +16,11 @@ function calculateTimeDuration($dep, $arr)
     $timeDifference = $startDate->diff($endDate);
     return formatDate($timeDifference);
 }
+
+
+// Economy Class Mapper
+$mapping = array(
+    'EL' => 'Economy Light',
+    'EV' => 'Economy Value',
+    'EE' => 'Economy Extra',
+);
