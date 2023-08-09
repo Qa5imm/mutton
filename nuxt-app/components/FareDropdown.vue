@@ -9,10 +9,10 @@
     </button>
     <div id="dropdown" class="mt-12" v-if="fareDropdown">
       <div id="fare" class="flex justify-between mb-6">
-        <div v-for="n in 2" id="class" class="flex flex-col">
-          <p id="type">{{ props.type }}</p>
-          <p id="currency">{{ props.currency }}</p>
-          <p id="amount">{{ props.amount }}</p>
+        <div v-for="fare in props.travelFares" id="class" class="flex flex-col">
+          <p id="type">{{ fare['class'] }}</p>
+          <p id="amount">{{  fare['currency']}}</p>
+          <p id="currency">{{ fare['total_fare'] }}</p>
           <button class="text-sm bg-yellow-500 px-2 py-1 rounded-lg">
             Confirm
           </button>
@@ -22,11 +22,12 @@
   </div>
 </template>
 <script setup>
+const props = defineProps(["travelFares"]);
 const fareDropdown = ref(false);
-const props = defineProps({
-  type: String,
-  currency: String,
-  amount: Number,
-});
+// console.log(props.fares);
+
+
+
+
 </script>
 <style></style>

@@ -33,10 +33,12 @@
           </div>
           <div id="details" class="flex flex-col ml-12">
             <div id="duartion">{{ flight["duration"] }}</div>
-            <div id="flightType">{{ flight["flight_type"] || flight["flight_key"] }}</div>
+            <div id="flightType">
+              {{ flight["flight_type"] || flight["flight_key"] }}
+            </div>
           </div>
         </div>
-        <FareDropdown :type="'Business'" :currency="'AED'" :amount="20000" />
+        <FareDropdown :travelFares="flight['TravelClass']"  />
         <DetailsDropdown />
       </div>
     </div>
