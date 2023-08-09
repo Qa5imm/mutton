@@ -1,4 +1,17 @@
 <template>
+  <div id="request" class="flex gap-x-6 m-6">
+    <h1 class="font-bold">Request:</h1>
+    <div id="details" class="flex gap-x-6">
+      <p id="date">
+        <span class="font-bold">Date</span> {{ airlines["date"] }}
+      </p>
+      |
+      <p id="travellers">
+        <span class="font-bold">Travellers</span> {{ airlines["date"] }}
+      </p>
+    </div>
+  </div>
+
   <div id="allAirlines" class="flex flex-col items-center gap-y-6 m-12">
     <div
       v-for="airline in airlines"
@@ -23,7 +36,7 @@
           </div>
           <!-- computed the segment name -->
           <div v-if="flight['segments'].length > 1" class="segment">
-            {{ flight["segments"][0]["origin"]["IATA"] }}
+            {{ flight["segments"][0]["destination"]["IATA"] }}
           </div>
           <div id="arrival" class="flex flex-col ml-36">
             <Location
@@ -38,7 +51,7 @@
             </div>
           </div>
         </div>
-        <FareDropdown :travelFares="flight['TravelClass']"  />
+        <FareDropdown :travelFares="flight['TravelClass']" />
         <DetailsDropdown :segments="flight['segments']" />
       </div>
     </div>

@@ -17,7 +17,7 @@ include_once __DIR__ . '/../utils/utils.php';
 
 
 
-class AljazeeraController 
+class AljazeeraController
 {
     protected static $mapping = array(
         'EL' => 'Economy Light',
@@ -27,16 +27,21 @@ class AljazeeraController
     );
     protected static $travellers = array(
         'ADT' => array(
-            'count' => 2
+            'count' => 3
         ),
         'CHD' => array(
-            'count' => 1
+            'count' => 0
         ),
     );
 
 
-    public static function getAirlineData($data)
+    public static function getAirlineData($data, $travellers)
     {
+        // setting travellers for the sake of it 
+        self::$travellers['ADT']['count'] = $travellers['ADULT']['count'];
+        self::$travellers['CHD']['count'] = $travellers['CHILD']['count'];
+
+
         // $response = file_get_contents("./api.json");
         // $data = json_decode($response, true);
         $aljazeeraData = $data["aljazeera-multiple"]["data"]["availabilityv4"];
@@ -96,15 +101,17 @@ class AljazeeraController
                         $totalFare = 0;
                         foreach ($passengerFares as $passengerFare) {
                             $passengerType = $passengerFare["passengerType"];
-                            $totalAmount = $passengerFare["fareAmount"] * self::$travellers[$passengerType]['count'];
-                            $totalFare += $totalAmount;
-                            $Fare = new Fare(        //Fare
-                                $passengerType,
-                                $totalAmount
-                            );
-                            $TravelClass->setFares($Fare);
+                            if (self::$travellers[$passengerType]['count'] !== 0) {
+                                $totalAmount = $passengerFare["fareAmount"] * self::$travellers[$passengerType]['count'];
+                                $totalFare += $totalAmount;
+                                $Fare = new Fare(        //Fare
+                                    $passengerType,
+                                    round($totalAmount, 2)  // rounding upto 2 decimal places
+                                );
+                                $TravelClass->setFares($Fare);
+                            }
                         }
-                        $totalFare= round($totalFare,2); // rounding upto 2 decimal places
+                        $totalFare = round($totalFare, 2); // rounding upto 2 decimal places
                         $TravelClass->setTotalFare($totalFare);
                         $Flight->setTravelClass($TravelClass);
                     }

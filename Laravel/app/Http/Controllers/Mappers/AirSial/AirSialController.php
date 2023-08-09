@@ -38,7 +38,7 @@ class AirSialController extends Controller
         )
     );
 
-    public static function getAirlineData($data)
+    public static function getAirlineData($data, $travellers)
     {
         $airSialData = $data["airsial"];
         $data = $airSialData["Response"]["Data"];
@@ -85,12 +85,12 @@ class AirSialController extends Controller
                         $totalFare += $totalAmount;
                         $Fare = new Fare(        //Fare
                             $passType,
-                            $totalAmount
+                            round($totalAmount, 2) // rounding upto 2 decimal places
                         );
                         $TravelClass->setFares($Fare);
                     }
                 }
-                $TravelClass->setTotalFare($totalFare);
+                $TravelClass->setTotalFare(round($totalFare, 2)); // rounding upto 2 decimal places
                 $Flight->setTravelClass($TravelClass);
             }
 
@@ -113,6 +113,5 @@ class AirSialController extends Controller
             $Airline->setFlight($Flight);
         }
         return $Airline;
-
     }
 }
