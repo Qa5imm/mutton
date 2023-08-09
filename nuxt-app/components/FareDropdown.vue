@@ -7,12 +7,14 @@
     >
       View Fares
     </button>
-    <div id="dropdown" class="mt-12" v-if="fareDropdown">
-      <div id="fare" class="flex justify-between mb-6">
+    <div id="dropdown" class="mt-8" v-if="fareDropdown">
+      <div id="fare" class="flex justify-around mb-6">
         <div v-for="fare in props.travelFares" id="class" class="flex flex-col">
-          <p id="type">{{ fare['class'] }}</p>
-          <p id="amount">{{  fare['currency']}}</p>
-          <p id="currency">{{ fare['total_fare'] }}</p>
+          <p id="type">{{ fare["class"] }}</p>
+          <p id="currency">
+            {{ fare["total_fare"] }}
+            <span id="amount">{{ fare["currency"] }}</span>
+          </p>
           <button class="text-sm bg-yellow-500 px-2 py-1 rounded-lg">
             Confirm
           </button>
@@ -24,10 +26,5 @@
 <script setup>
 const props = defineProps(["travelFares"]);
 const fareDropdown = ref(false);
-// console.log(props.fares);
-
-
-
-
 </script>
 <style></style>
