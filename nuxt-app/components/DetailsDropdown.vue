@@ -23,6 +23,8 @@
         </div>
         <div id="details" class="flex flex-col ml-12">
           <div id="duartion">{{ segment["duration"] }}</div>
+          <div id="duartion">{{ segment["flight_number"] }}</div>
+          <div id="duartion">{{ segment["aircraft"] }}</div>
         </div>
       </div>
     </div>

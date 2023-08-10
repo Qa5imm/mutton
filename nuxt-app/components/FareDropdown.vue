@@ -10,7 +10,7 @@
     <div id="dropdown" class="mt-8" v-if="fareDropdown">
       <div id="fare" class="flex justify-around mb-6">
         <div v-for="fare in props.travelFares" id="class" class="flex flex-col">
-          <p id="type">{{ fare["class"] }}</p>
+          <p id="type">{{ fare["type"] }}</p>
           <p id="currency">
             {{ fare["total_fare"] }}
             <span id="amount">{{ fare["currency"] }}</span>

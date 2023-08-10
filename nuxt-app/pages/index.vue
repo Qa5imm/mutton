@@ -24,7 +24,7 @@
         class="border-2 border-black px-6 py-4"
       >
         <div id="airline">
-          <p class="">{{ airline["airline"] }}</p>
+          <p class="">{{ airline["name"] }}</p>
           <hr class="border-black mb-2" />
         </div>
         <div id="timing" class="flex">
@@ -47,7 +47,7 @@
           <div id="details" class="flex flex-col ml-12">
             <div id="duartion">{{ flight["duration"] }}</div>
             <div id="flightType">
-              {{ flight["flight_type"] || flight["flight_key"] }}
+              {{ flight["flight_type"] }}
             </div>
           </div>
         </div>
