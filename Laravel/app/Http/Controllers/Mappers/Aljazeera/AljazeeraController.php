@@ -106,11 +106,11 @@ class AljazeeraController
                                     $passengerType,
                                     round($totalAmount, 2)  // rounding upto 2 decimal places
                                 );
-                                $TravelClass->setFares($Fare);
+                                $TravelClass->fares = $Fare;
                             }
                         }
-                        $totalFare = round($totalFare, 2); // rounding upto 2 decimal places
-                        $TravelClass->setTotalFare($totalFare);
+                        $TravelClass->total_fare = round($totalFare, 2);
+
                         $Flight->travelClasses = $TravelClass;
                     }
                 }

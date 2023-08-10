@@ -87,10 +87,10 @@ class AirSialController extends Controller
                             $passType,
                             round($totalAmount, 2) // rounding upto 2 decimal places
                         );
-                        $TravelClass->setFares($Fare);
+                        $TravelClass->fares = $Fare;
                     }
                 }
-                $TravelClass->setTotalFare(round($totalFare, 2)); // rounding upto 2 decimal places
+                $TravelClass->total_fare=round($totalFare, 2);
                 $Flight->travelClasses = $TravelClass;
             }
 
