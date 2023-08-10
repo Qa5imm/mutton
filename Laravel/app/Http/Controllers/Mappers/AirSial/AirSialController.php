@@ -56,7 +56,7 @@ class AirSialController extends Controller
             $duration = calculateTimeDuration($depTime, $arrTime);
             $Flight = new Flight(
                 null,
-                null,
+                'NonStop',
                 $flightData['FLIGHT_NO'],
                 new Airport(null, null, $flightData["ORGN"]),
                 new Airport(null, null, $flightData["DEST"]),
@@ -104,7 +104,9 @@ class AirSialController extends Controller
                     new Airport(null, null, $flightData["DEST"]),
                     $depTime,
                     $arrTime,
-                    $duration
+                    $duration,
+                    $flightData["FLIGHT_NO"],
+                    null
                 );
                 $Flight->setSegments($Segment);
             }

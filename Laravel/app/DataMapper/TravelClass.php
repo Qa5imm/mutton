@@ -12,8 +12,8 @@ class TravelClass implements JsonSerializable
     protected $total_fare;
     public function __construct(
         protected String $type,
-        protected String $total_weight,
-        protected String $bags_allowed,
+        protected ?String $total_weight,
+        protected ?String $bags_allowed,
         protected String $currency,
     ) {
     }

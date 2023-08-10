@@ -122,17 +122,25 @@ class AljazeeraController
             // Segments
             $segments = $flightData["segments"];
             foreach ($segments as $segment) {
+                // higher level objects
                 $segDesignator = $segment["designator"];
+                $segLegInfo = $segment["legs"][0]["legInfo"];
+                $segIdentifier = $segment['identifier'];
+
+                // required attributes
                 $depTime =   $segDesignator["departure"];
                 $arrTime =   $segDesignator["arrival"];
+                $aircraft = $segLegInfo["equipmentType"] . $segLegInfo["equipmentTypeSuffix"];
+                $flightNumber = $segIdentifier["carrierCode"] . " " . $segIdentifier["identifier"];
                 $duration = calculateTimeDuration($depTime, $arrTime);
                 $Segment = new Segment(      //Segment
                     new Airport(null, null,  $segDesignator["origin"]),
                     new Airport(null, null,  $segDesignator["destination"]),
                     $depTime,
                     $arrTime,
-                    $duration
-
+                    $duration,
+                    $flightNumber,
+                    $aircraft
                 );
                 $Flight->setSegments($Segment);
             }

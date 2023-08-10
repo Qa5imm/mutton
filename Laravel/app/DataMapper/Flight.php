@@ -14,9 +14,9 @@ class Flight implements JsonSerializable
   
 
     public function __construct(
-        protected String $aircraft,
+        protected ?String $aircraft, //? to indicate it can be null
         protected String $flight_type,
-        protected String $flight_key,
+        protected String $flight_number,
         protected Airport $origin,
         protected Airport $destination,
         protected String $departure_date,

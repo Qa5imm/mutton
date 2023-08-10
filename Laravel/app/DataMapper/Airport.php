@@ -7,8 +7,8 @@ use JsonSerializable;
 class Airport implements JsonSerializable
 {
     public function __construct(
-        protected String $name,
-        protected String $country,
+        protected ?String $name,  //? to indicate it can be null
+        protected ?String $country,
         protected String $IATA
     ) {
     }

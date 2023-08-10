@@ -11,7 +11,9 @@ class Segment implements JsonSerializable
         protected Airport $destination,
         protected String $departure_time,
         protected String $arrival_time,
-        protected String $duration
+        protected String $duration,
+        protected String $flight_number,
+        protected ?String $aircraft,
     ) {
     }
     public function jsonSerialize()

@@ -6,13 +6,14 @@ use App\DataMapper\Flight;
 use JsonSerializable;
 use PhpParser\Node\Expr\Cast\String_;
 
+
 class Airline implements JsonSerializable
 {
     protected $flights = [];
     public function __construct(
         protected String $name,
         protected String $logo,
-        protected String $travllers,
+        protected $travllers,
         protected String $date
     ) {
     }
