@@ -1,14 +1,13 @@
 <?php
 
 namespace App\DataMapper;
-
 use JsonSerializable;
 
 class Fare implements JsonSerializable
 {
     public function __construct(
-        protected $passenger_type,
-        protected $amount,
+        protected String $passenger_type,
+        protected int | float $amount,
     ) {
     }
     public function jsonSerialize()

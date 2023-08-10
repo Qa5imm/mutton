@@ -9,9 +9,9 @@ class Segment implements JsonSerializable
     public function __construct(
         protected Airport $origin,
         protected Airport $destination,
-        protected $departure_time,
-        protected $arrival_time,
-        protected $duration
+        protected String $departure_time,
+        protected String $arrival_time,
+        protected String $duration
     ) {
     }
     public function jsonSerialize()

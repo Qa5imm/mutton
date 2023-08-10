@@ -11,10 +11,10 @@ class TravelClass implements JsonSerializable
     protected $fares = [];
     protected $total_fare;
     public function __construct(
-        protected $class,
-        protected $total_weight,
-        protected $bags_allowed, 
-        protected $currency,
+        protected String $type,
+        protected String $total_weight,
+        protected String $bags_allowed,
+        protected String $currency,
     ) {
     }
 
@@ -23,8 +23,9 @@ class TravelClass implements JsonSerializable
         $this->fares[] = $fare;
     }
 
-    public function setTotalFare(float $total){
-        $this->total_fare= $total;
+    public function setTotalFare(float $total)
+    {
+        $this->total_fare = $total;
     }
     public function jsonSerialize()
     {

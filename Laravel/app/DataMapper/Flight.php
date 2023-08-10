@@ -14,15 +14,15 @@ class Flight implements JsonSerializable
   
 
     public function __construct(
-        protected $aircraft,
-        protected $flight_type,
-        protected $flight_key,
+        protected String $aircraft,
+        protected String $flight_type,
+        protected String $flight_key,
         protected Airport $origin,
         protected Airport $destination,
-        protected $departure_date,
-        protected $departure_time,
-        protected $arrival_time,
-        protected $duration,
+        protected String $departure_date,
+        protected String $departure_time,
+        protected String $arrival_time,
+        protected String $duration,
     ) {
     }
 
