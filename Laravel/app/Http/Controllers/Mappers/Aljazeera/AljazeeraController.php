@@ -42,8 +42,6 @@ class AljazeeraController
         self::$travellers['CHD']['count'] = $travellers['CHILD']['count'];
 
 
-        // $response = file_get_contents("./api.json");
-        // $data = json_decode($response, true);
         $aljazeeraData = $data["aljazeera-multiple"]["data"]["availabilityv4"];
 
         $trips = $aljazeeraData["results"][0]["trips"];
@@ -113,7 +111,7 @@ class AljazeeraController
                         }
                         $totalFare = round($totalFare, 2); // rounding upto 2 decimal places
                         $TravelClass->setTotalFare($totalFare);
-                        $Flight->setTravelClass($TravelClass);
+                        $Flight->travelClasses = $TravelClass;
                     }
                 }
             }
@@ -142,9 +140,10 @@ class AljazeeraController
                     $flightNumber,
                     $aircraft
                 );
-                $Flight->setSegments($Segment);
+                $Flight->segments = $Segment;
             }
-            $Airline->setFlight($Flight);
+            // using magic function
+            $Airline->flights = $Flight;
         }
         return $Airline;
     }

@@ -91,7 +91,7 @@ class AirSialController extends Controller
                     }
                 }
                 $TravelClass->setTotalFare(round($totalFare, 2)); // rounding upto 2 decimal places
-                $Flight->setTravelClass($TravelClass);
+                $Flight->travelClasses = $TravelClass;
             }
 
 
@@ -108,11 +108,11 @@ class AirSialController extends Controller
                     $flightData["FLIGHT_NO"],
                     null
                 );
-                $Flight->setSegments($Segment);
+                $Flight->segments = $Segment;
             }
 
             // Airline
-            $Airline->setFlight($Flight);
+            $Airline->flights = $Flight;
         }
         return $Airline;
     }

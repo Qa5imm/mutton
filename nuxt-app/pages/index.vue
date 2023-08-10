@@ -51,7 +51,7 @@
             </div>
           </div>
         </div>
-        <FareDropdown :travelFares="flight['TravelClass']" />
+        <FareDropdown :travelFares="flight['travelClasses']" />
         <DetailsDropdown :segments="flight['segments']" />
       </div>
     </div>

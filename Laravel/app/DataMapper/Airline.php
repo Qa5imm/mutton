@@ -3,9 +3,8 @@
 namespace App\DataMapper;
 
 use App\DataMapper\Flight;
+use Exception;
 use JsonSerializable;
-use PhpParser\Node\Expr\Cast\String_;
-
 
 class Airline implements JsonSerializable
 {
@@ -14,15 +13,19 @@ class Airline implements JsonSerializable
         protected String $name,
         protected String $logo,
         protected $travllers,
-        protected String $date
+        protected String $date,
     ) {
     }
     public function jsonSerialize()
     {
         return get_object_vars($this);
     }
-    public function setFlight(Flight $flight)
+    public function __set($name, $value)
     {
-        $this->flights[] = $flight;
+        if (property_exists($this, $name)) {
+            $this->$name[] = $value;
+        } else {
+            throw new Exception("Property you're trying to set doesn't exist");
+        }
     }
 }
