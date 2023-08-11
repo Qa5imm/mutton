@@ -85,12 +85,12 @@ class AirSialController extends Controller
                         $totalFare += $totalAmount;
                         $Fare = new Fare(        //Fare
                             $passType,
-                            round($totalAmount, 2) // rounding upto 2 decimal places
+                            self::rounder($totalAmount, 2) // rounding upto 2 decimal places
                         );
                         $TravelClass->fares = $Fare;
                     }
                 }
-                $TravelClass->total_fare=round($totalFare, 2);
+                $TravelClass->total_fare = self::rounder($totalFare, 2);
                 $Flight->travelClasses = $TravelClass;
             }
 
@@ -115,5 +115,9 @@ class AirSialController extends Controller
             $Airline->flights = $Flight;
         }
         return $Airline;
+    }
+    public static function rounder($amount, $spaces)
+    { // returns float, same as type defined in travel Class
+        return round($amount, $spaces);
     }
 }

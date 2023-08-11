@@ -7,7 +7,7 @@ class Fare implements JsonSerializable
 {
     public function __construct(
         protected String $passenger_type,
-        protected int | float $amount,
+        protected float $amount,
     ) {
     }
     public function jsonSerialize()

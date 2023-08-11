@@ -3,12 +3,9 @@
 namespace App\DataMapper;
 
 use App\DataMapper\Airport;
-use App\DataMapper\Segment;
-use App\DataMapper\TravelClass;
-use Exception;
 use JsonSerializable;
 
-class Flight implements JsonSerializable
+class Flight extends SetterClass implements JsonSerializable
 {
     protected $travelClasses = [];
     protected $segments = [];
@@ -30,13 +27,5 @@ class Flight implements JsonSerializable
     public function jsonSerialize()
     {
         return get_object_vars($this);
-    }
-    public function __set($name, $value)
-    {
-        if (property_exists($this, $name)) {
-            $this->$name[] = $value;
-        } else {
-            throw new Exception("Property you're trying to set doesn't exist");
-        }
     }
 }
