@@ -6,7 +6,7 @@ use JsonSerializable;
 use ReflectionClass;
 use ReflectionProperty;
 
-class Airline extends SetterClass 
+class Airline extends UtilityBase 
 {
     protected $flights = [];
 
@@ -20,17 +20,4 @@ class Airline extends SetterClass
     ) {
     }
 
-    // public function jsonSerialize()
-    // {
-    //     // to only make only protected and private data members jsonSerializable
-    //     $class = new ReflectionClass($this);
-    //     $properties = $class->getProperties(ReflectionProperty::IS_PUBLIC | ReflectionProperty::IS_PROTECTED);
-    //     $seriableMembers = array();
-    //     foreach ($properties as $property) {
-    //         $propName = $property->getName();
-    //         $seriableMembers[$propName] = $this->$propName;
-    //     }
-    //     return $seriableMembers;
-    //     // return get_object_vars($this);
-    // }
 }

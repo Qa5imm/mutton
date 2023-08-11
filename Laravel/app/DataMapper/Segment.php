@@ -3,7 +3,7 @@
 namespace App\DataMapper;
 use App\DataMapper\Airport;
 
-class Segment  extends SetterClass
+class Segment  extends UtilityBase
 {
     public function __construct(
         protected Airport $origin,

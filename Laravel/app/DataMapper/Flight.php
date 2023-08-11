@@ -4,7 +4,7 @@ namespace App\DataMapper;
 
 use App\DataMapper\Airport;
 
-class Flight extends SetterClass 
+class Flight extends UtilityBase 
 {
     protected $travelClasses = [];
     protected $segments = [];

@@ -2,7 +2,7 @@
 
 namespace App\DataMapper;
 
-class TravelClass extends SetterClass
+class TravelClass extends UtilityBase
 {
     protected $fares = [];
     protected float $total_fare = 0;

@@ -2,7 +2,7 @@
 
 namespace App\DataMapper;
 
-class Fare  extends SetterClass
+class Fare  extends UtilityBase
 {
     public function __construct(
         protected String $passenger_type,

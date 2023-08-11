@@ -3,7 +3,7 @@
 namespace App\DataMapper;
 
 
-class Airport extends SetterClass
+class Airport extends UtilityBase
 {
     public function __construct(
         protected ?String $name,  //? to indicate it can be null
