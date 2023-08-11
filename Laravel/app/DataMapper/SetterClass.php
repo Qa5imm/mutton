@@ -4,10 +4,11 @@ namespace App\DataMapper;
 
 use Illuminate\Support\Str;
 use Exception;
+use JsonSerializable;
+use ReflectionClass;
+use ReflectionProperty;
 
-
-
-class SetterClass
+class SetterClass implements JsonSerializable
 {
     public function __set($name, $value)
     {
@@ -43,5 +44,17 @@ class SetterClass
         $formattedName = $this->formatClassName($name);
         $class = "\App\DataMapper\\" . $formattedName;
         return $class;
+    }
+    public function jsonSerialize()
+    {
+        // to only make only protected and private data members jsonSerializable
+        $class = new ReflectionClass($this);
+        $properties = $class->getProperties(ReflectionProperty::IS_PUBLIC | ReflectionProperty::IS_PROTECTED);
+        $seriableMembers = array();
+        foreach ($properties as $property) {
+            $propName = $property->getName();
+            $seriableMembers[$propName] = $this->$propName;
+        }
+        return $seriableMembers;
     }
 }

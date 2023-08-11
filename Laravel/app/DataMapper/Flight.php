@@ -3,9 +3,8 @@
 namespace App\DataMapper;
 
 use App\DataMapper\Airport;
-use JsonSerializable;
 
-class Flight extends SetterClass implements JsonSerializable
+class Flight extends SetterClass 
 {
     protected $travelClasses = [];
     protected $segments = [];
@@ -22,10 +21,5 @@ class Flight extends SetterClass implements JsonSerializable
         protected String $arrival_time,
         protected String $duration,
     ) {
-    }
-
-    public function jsonSerialize()
-    {
-        return get_object_vars($this);
     }
 }

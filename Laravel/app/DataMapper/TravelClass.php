@@ -2,9 +2,7 @@
 
 namespace App\DataMapper;
 
-use JsonSerializable;
-
-class TravelClass extends SetterClass implements JsonSerializable
+class TravelClass extends SetterClass
 {
     protected $fares = [];
     protected float $total_fare = 0;
@@ -14,9 +12,5 @@ class TravelClass extends SetterClass implements JsonSerializable
         protected ?String $bags_allowed,
         protected String $currency,
     ) {
-    }
-    public function jsonSerialize()
-    {
-        return get_object_vars($this);
     }
 }
