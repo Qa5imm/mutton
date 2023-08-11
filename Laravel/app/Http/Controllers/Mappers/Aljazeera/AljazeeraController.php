@@ -42,7 +42,7 @@ class AljazeeraController
         self::$travellers['CHD']['count'] = $travellers['CHILD']['count'];
 
 
-        $aljazeeraData = $data["aljazeera-multiple"]["data"]["availabilityv4"];
+        $aljazeeraData = $data["aljazeera-travellers"]["data"]["availabilityv4"];
 
         $trips = $aljazeeraData["results"][0]["trips"];
         $availableFares = $aljazeeraData["faresAvailable"];
