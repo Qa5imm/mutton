@@ -10,28 +10,33 @@ use ReflectionProperty;
 
 class UtilityBase implements JsonSerializable
 {
+    // path mapper of all the array for which we need to check type
+    private $classPath = [
+        'flights' => 'App\DataMapper\Flight',
+        'travelClasses' => 'App\DataMapper\TravelClass',
+        'segments' => 'App\DataMapper\Segment',
+        'fares' => 'App\DataMapper\Fare'
+    ];
     public function __set($name, $value)
     {
         if (property_exists($this, $name)) {
-            $invalid = true; // flag to catch invalid assignment
-            if (gettype($this->$name) == "array") {
-                $class = $this->classNameResolutor($name); // rescolve given string to class
-                if ($value instanceof $class) { // checking type of the passed instance
-                    $this->$name[] = $value;
-                    $invalid = false;
-                }
-            } else { //in case of a non-object value (string, int etc)
-                if (gettype($value) == gettype($this->$name)) { // checking type of the passed value
-                    $this->$name = $value;
-                    $invalid = false;
-                }
-            }
-            if ($invalid) { // throwing Exception if $invalid flag is true
-                throw new Exception("Invalid Assignment");
+            if ( // checking if it exists in classPath Mapper and if it does then assign the corresponding path
+                array_key_exists($name, $this->classPath)
+                && $value instanceof $this->classPath[$name]
+            ) {
+                $this->$name[] = $value;
+            } else {
+                $this->$name = $value;
             }
         } else {
-            throw new Exception("Property you're trying to set doesn't exist");
+            throw new Exception("Property you're trying to set doesn't exist" . $name);
         }
+    }
+
+
+    public function __get($name)
+    {
+        return $this->$name;
     }
     protected function formatClassName($name)
     {
@@ -47,6 +52,7 @@ class UtilityBase implements JsonSerializable
     }
     public function jsonSerialize()
     {
+        // return get_object_vars($this);
         // to only make only protected and private data members jsonSerializable
         $class = new ReflectionClass($this);
         $properties = $class->getProperties(ReflectionProperty::IS_PUBLIC | ReflectionProperty::IS_PROTECTED);

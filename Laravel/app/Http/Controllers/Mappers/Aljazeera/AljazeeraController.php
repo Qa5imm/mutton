@@ -42,7 +42,7 @@ class AljazeeraController
         self::$travellers['CHD']['count'] = $travellers['CHILD']['count'];
 
 
-        $aljazeeraData = $data["aljazeera-travellers"]["data"]["availabilityv4"];
+        $aljazeeraData = $data["aljazeera-multiple"]["data"]["availabilityv4"];
 
         $trips = $aljazeeraData["results"][0]["trips"];
         $availableFares = $aljazeeraData["faresAvailable"];
@@ -53,7 +53,11 @@ class AljazeeraController
         $formattedDepDate = explode("T", $depDate)[0];
 
         //Airline- highest heirarchy object
-        $Airline = new Airline("Aljazeera", "logo", self::$travellers, $formattedDepDate);
+        $Airline = new Airline();
+        $Airline->name = "Aljazeera";
+        $Airline->logo = "logo";
+        $Airline->travellers = self::$travellers;
+        $Airline->date = $formattedDepDate;
 
 
         // Flight  
@@ -62,17 +66,14 @@ class AljazeeraController
             $depTime =   $designator["departure"];
             $arrTime =   $designator["arrival"];
             $duration = calculateTimeDuration($depTime, $arrTime);
-            $Flight = new Flight(
-                null,
-                $flightData["flightType"],
-                $flightData["journeyKey"],
-                new Airport(null, null, $designator["origin"]),
-                new Airport(null, null, $designator["destination"]),
-                $depDate,
-                $depTime,
-                $arrTime,
-                $duration
-            );
+            $Flight = new Flight();
+            $Flight->flight_type = $flightData["flightType"];
+            $Flight->origin->IATA = $designator["origin"];
+            $Flight->destination->IATA = $designator["destination"];
+            $Flight->departure_date = $depDate;
+            $Flight->departure_time = $depTime;
+            $Flight->arrival_time = $arrTime;
+            $Flight->duration = $duration;
 
 
             // PassengerClass
@@ -86,15 +87,12 @@ class AljazeeraController
                         $fairValue = $availableFare["value"];
                         $class = $fairValue["fares"][0]["productClass"];
                         $mappedClass = self::$mapping[$class];
-                        $weight = null;
-                        $bags_allowed = null;
                         $currency = $currencyCode;
-                        $TravelClass = new TravelClass(
-                            $mappedClass,
-                            $weight,
-                            $bags_allowed,
-                            $currency
-                        );
+                        // Travel Class
+                        $TravelClass = new TravelClass();
+                        $TravelClass->type =  $mappedClass;
+                        $TravelClass->currency = $currency;
+
                         $passengerFares = $fairValue["fares"][0]["passengerFares"];
                         $totalFare = 0;
                         foreach ($passengerFares as $passengerFare) {
@@ -102,10 +100,11 @@ class AljazeeraController
                             if (self::$travellers[$passengerType]['count'] !== 0) {
                                 $totalAmount = $passengerFare["fareAmount"] * self::$travellers[$passengerType]['count'];
                                 $totalFare += $totalAmount;
-                                $Fare = new Fare(        //Fare
-                                    $passengerType,
-                                    round($totalAmount, 2)  // rounding upto 2 decimal places
-                                );
+                                // Fare
+                                $Fare = new Fare();
+                                $Fare->passenger_type = $passengerType;
+                                $Fare->amount = round($totalAmount, 2);  // rounding upto 2 decimal places
+
                                 $TravelClass->fares = $Fare;
                             }
                         }
@@ -131,18 +130,19 @@ class AljazeeraController
                 $aircraft = $segLegInfo["equipmentType"] . $segLegInfo["equipmentTypeSuffix"];
                 $flightNumber = $segIdentifier["carrierCode"] . " " . $segIdentifier["identifier"];
                 $duration = calculateTimeDuration($depTime, $arrTime);
-                $Segment = new Segment(      //Segment
-                    new Airport(null, null,  $segDesignator["origin"]),
-                    new Airport(null, null,  $segDesignator["destination"]),
-                    $depTime,
-                    $arrTime,
-                    $duration,
-                    $flightNumber,
-                    $aircraft
-                );
+                // Segment
+                $Segment = new Segment();
+                $Segment->origin->IATA = $segDesignator["origin"];
+                $Segment->destination->IATA = $segDesignator["destination"];
+                $Segment->departure_time = $depTime;
+                $Segment->arrival_time = $arrTime;
+                $Segment->duration = $duration;
+                $Segment->flight_number = $flightNumber;
+                $Segment->aircraft = $aircraft;
+
                 $Flight->segments = $Segment;
             }
-            // using magic function
+
             $Airline->flights = $Flight;
         }
         return $Airline;
