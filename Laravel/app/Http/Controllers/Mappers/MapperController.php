@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Mappers;
 
 use App\Http\Controllers\Mappers\AirSial\AirSialController;
 use App\Http\Controllers\Mappers\Aljazeera\AljazeeraController;
+use Illuminate\Support\Facades\Http;
 
 class MapperController
 {
@@ -22,9 +23,9 @@ class MapperController
     );
     public function getData()
     {
-        $response = file_get_contents("./api.json");
+        //  external api
+        $response= Http::get('http://localhost:7000/all');
         $data = json_decode($response, true);
-
         $this->mappedData[] = AljazeeraController::getAirlineData($data, self::$travellers);
         $this->mappedData[] = AirSialController::getAirlineData($data, self::$travellers);
         return response()->json(['data' => $this->mappedData]);
